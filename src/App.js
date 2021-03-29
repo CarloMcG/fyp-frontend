@@ -1,4 +1,7 @@
 import React from "react";
+import { Route, Link } from "react-router-dom";
+
+import NavBar from "./NavBar";
 
 import Login from "./Login";
 import AdminLogin from "./AdminLogin";
@@ -14,16 +17,17 @@ import NewPlan from "./NewPlan";
 function App() {
   return (
     <div className="App">
-      <Login />
-      <AdminLogin />
-      <CustomerDashboard />
-      <AdminDashboard />
-      <Bills />
-      <PayBill />
-      <Transactions />
-      <TopUp />
-      <Plans />
-      <NewPlan />
+      <NavBar />
+      <Route exact path="/" component={Login} />
+      <Route exact path="/Admin" component={AdminLogin} />
+      <Route exact path="/CustomerDashboard" component={CustomerDashboard} />
+      <Route exact path="/AdminDashboard" component={AdminDashboard} />
+      <Route exact path="/Bills" component={Bills} />
+      <Route exact path="/PayBill" component={PayBill} />
+      <Route exact path="/Transactoins" component={Transactions} />
+      <Route exact path="/TopUp" component={TopUp} />
+      <Route exact path="/Plans" component={Plans} />
+      <Route exact path="/NewPlan" component={NewPlan} />
     </div>
   );
 }
