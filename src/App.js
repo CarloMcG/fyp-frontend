@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import Login from "./Login";
+import AdminLogin from "./AdminLogin";
+import CustomerDashboard from "./CustomerDashboard";
+import AdminDashboard from "./AdminDashboard";
+import Bills from "./Bills";
+import PayBill from "./PayBill";
+import Transactions from "./Transactions";
+import TopUp from "./TopUp";
+import Plans from "./Plans";
+import NewPlan from "./NewPlan";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Login />
+      <AdminLogin />
+      <CustomerDashboard />
+      <AdminDashboard />
+      <Bills />
+      <PayBill />
+      <Transactions />
+      <TopUp />
+      <Plans />
+      <NewPlan />
     </div>
   );
 }
-
 export default App;
