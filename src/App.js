@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-
-import NavBar from "./NavBar";
+import "./theme.scss";
 
 import Login from "./Login";
 import AdminLogin from "./AdminLogin";
@@ -13,21 +12,24 @@ import Transactions from "./Transactions";
 import TopUp from "./TopUp";
 import Plans from "./Plans";
 import NewPlan from "./NewPlan";
+import AddToPlan from "./AddToPlan";
+import PrePayDashboard from "./PrePayDashboard";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
       <Route exact path="/" component={Login} />
       <Route exact path="/Admin" component={AdminLogin} />
       <Route exact path="/CustomerDashboard" component={CustomerDashboard} />
       <Route exact path="/AdminDashboard" component={AdminDashboard} />
       <Route exact path="/Bills" component={Bills} />
       <Route exact path="/PayBill" component={PayBill} />
-      <Route exact path="/Transactoins" component={Transactions} />
+      <Route exact path="/Transactions" component={Transactions} />
       <Route exact path="/TopUp" component={TopUp} />
       <Route exact path="/Plans" component={Plans} />
       <Route exact path="/NewPlan" component={NewPlan} />
+      <Route exact path="/AddToPlan" component={AddToPlan} />
+      <Route exact path="/PrePayDashBoard" component={PrePayDashboard} />
     </div>
   );
 }
