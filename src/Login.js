@@ -51,9 +51,9 @@ function login() {
               </label>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label class="row justify-content-center">
-                  Email Address
+                  Username
                 </Form.Label>
-                <Form.Control type="email" placeholder="Email" />
+                <Form.Control type="username" placeholder="Username" />
               </Form.Group>
               <Form.Group controlId="formBasicPassword">
                 <Form.Label class="row justify-content-center">
