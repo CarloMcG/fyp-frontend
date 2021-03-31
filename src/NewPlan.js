@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 
 function newplan() {
   return (
-    <Container>
+    <Container fluid>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/CustomerDashboard">
           TelecomsCorp
@@ -31,6 +31,11 @@ function newplan() {
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/Users">
+                Users<span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" href="/Plans">
                 Plans<span class="sr-only">(current)</span>
               </a>
@@ -39,7 +44,7 @@ function newplan() {
         </div>
         <div class="btn-group float-right">
           <a
-            href="/"
+            href="/admin"
             class="btn btn-primary btn-lg active"
             role="button"
             aria-pressed="true"

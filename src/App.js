@@ -14,6 +14,7 @@ import Plans from "./Plans";
 import NewPlan from "./NewPlan";
 import AddToPlan from "./AddToPlan";
 import PrePayDashboard from "./PrePayDashboard";
+import Users from "./Users";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route exact path="/NewPlan" component={NewPlan} />
       <Route exact path="/AddToPlan" component={AddToPlan} />
       <Route exact path="/PrePayDashBoard" component={PrePayDashboard} />
+      <Route exact path="/Users" component={Users} />
     </div>
   );
 }

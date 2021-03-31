@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
-function plans() {
+function Users() {
   return (
     <Container fluid>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -30,12 +30,12 @@ function plans() {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Users">
+              <a class="nav-link active" href="/Users">
                 Users<span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/Plans">
+              <a class="nav-link " href="/Plans">
                 Plans<span class="sr-only">(current)</span>
               </a>
             </li>
@@ -43,7 +43,7 @@ function plans() {
         </div>
         <div class="btn-group float-right">
           <a
-            href="/admin"
+            href="/Admin"
             class="btn btn-primary btn-lg active"
             role="button"
             aria-pressed="true"
@@ -52,38 +52,17 @@ function plans() {
           </a>
         </div>
       </nav>
-      <div class="btn-group float-left">
-        <a
-          href="/AddToPlan"
-          class="btn btn-primary btn-lg active"
-          role="button"
-          aria-pressed="true"
-        >
-          Add a user to an existing plan
-        </a>
-      </div>
-      <div class="btn-group float-right">
-        <a
-          href="/NewPlan"
-          class="btn btn-primary btn-lg active"
-          role="button"
-          aria-pressed="true"
-        >
-          Create a New Plan
-        </a>
-      </div>
+
       <Col>
         <div class="jumbotron justify-content-center">
           <Row>
             <table class="table table-bordered">
               <thead>
                 <tr>
+                  <th scope="col">User ID</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Customer Type</th>
                   <th scope="col">Plan ID</th>
-                  <th scope="col">LandLine Rate Per Minute</th>
-                  <th scope="col">Mobile Rate Per Minute</th>
-                  <th scope="col">International Rate Per Minute</th>
-                  <th scope="col">Premium Rate Per Minute</th>
-                  <th scope="col">Number of Active Users</th>
                 </tr>
               </thead>
               <tbody></tbody>
@@ -95,4 +74,4 @@ function plans() {
   );
 }
 
-export default plans;
+export default Users;

@@ -31,6 +31,11 @@ function aDashboard() {
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/Users">
+                Users<span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link " href="/Plans">
                 Plans<span class="sr-only">(current)</span>
               </a>
@@ -39,7 +44,7 @@ function aDashboard() {
         </div>
         <div class="btn-group float-right">
           <a
-            href="/"
+            href="/admin"
             class="btn btn-primary btn-lg active"
             role="button"
             aria-pressed="true"
