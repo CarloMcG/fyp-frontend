@@ -1,15 +1,15 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-frontend-master-175358-authRole",
-      "UnauthRoleArn": "arn:aws:iam::466606171273:role/amplify-frontend-master-175358-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::466606171273:role/amplify-frontend-master-175358-authRole",
+      "AuthRoleName": "amplify-frontend-dev-133939-authRole",
+      "UnauthRoleArn": "arn:aws:iam::466606171273:role/amplify-frontend-dev-133939-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::466606171273:role/amplify-frontend-dev-133939-authRole",
       "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-frontend-master-175358-deployment",
-      "UnauthRoleName": "amplify-frontend-master-175358-unauthRole",
-      "StackName": "amplify-frontend-master-175358",
-      "StackId": "arn:aws:cloudformation:eu-west-1:466606171273:stack/amplify-frontend-master-175358/5ad42060-90af-11eb-b9f9-0a09032a195b",
-      "AmplifyAppId": "dskf3t87dpw61"
+      "DeploymentBucketName": "amplify-frontend-dev-133939-deployment",
+      "UnauthRoleName": "amplify-frontend-dev-133939-unauthRole",
+      "StackName": "amplify-frontend-dev-133939",
+      "StackId": "arn:aws:cloudformation:eu-west-1:466606171273:stack/amplify-frontend-dev-133939/28e1e860-921e-11eb-af0a-066d6f801289",
+      "AmplifyAppId": "drx784c376dii"
     }
   },
   "auth": {
@@ -17,21 +17,7 @@
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "customAuth": false,
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-master-175358-deployment/amplify-cfn-templates/auth/frontend5650a490-cloudformation-template.yml",
-        "logicalId": "authfrontend5650a490"
-      },
-      "lastPushTimeStamp": "2021-03-29T17:03:04.746Z",
-      "output": {
-        "UserPoolId": "eu-west-1_RpaTCUkpQ",
-        "AppClientIDWeb": "27lud4o6teeti75cm1s2trhib7",
-        "AppClientID": "243q8mee7f2665k9ot4rh7vboh",
-        "IdentityPoolId": "eu-west-1:a5cdfb3e-718c-4944-b106-d1599812132c",
-        "IdentityPoolName": "frontend5650a490_identitypool_5650a490__master",
-        "UserPoolName": "frontend5650a490_userpool_5650a490"
-      },
-      "lastPushDirHash": "H/Xoa9+U5rDzg8oZ9tsFL4uWay4="
+      "customAuth": false
     }
   }
 }
