@@ -17,7 +17,21 @@
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "customAuth": false
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-dev-133939-deployment/amplify-cfn-templates/auth/frontend5650a490-cloudformation-template.yml",
+        "logicalId": "authfrontend5650a490"
+      },
+      "lastPushTimeStamp": "2021-03-31T13:01:18.763Z",
+      "output": {
+        "UserPoolId": "eu-west-1_YD2OPi2Xt",
+        "AppClientIDWeb": "3lka1j5gk4ci9viif7b7sfb59s",
+        "AppClientID": "2tq1bkas33278bqtd416q42o86",
+        "IdentityPoolId": "eu-west-1:31d8a769-26ed-45c1-bcda-71ca7465833e",
+        "IdentityPoolName": "frontend5650a490_identitypool_5650a490__dev",
+        "UserPoolName": "frontend5650a490_userpool_5650a490"
+      },
+      "lastPushDirHash": "H/Xoa9+U5rDzg8oZ9tsFL4uWay4="
     }
   }
 }

@@ -71,7 +71,7 @@
     "authfrontend5650a490": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-frontend-master-175358-deployment/amplify-cfn-templates/auth/frontend5650a490-cloudformation-template.yml",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-frontend-dev-133939-deployment/amplify-cfn-templates/auth/frontend5650a490-cloudformation-template.yml",
         "Parameters": {
           "identityPoolName": "frontend5650a490_identitypool_5650a490",
           "allowUnauthenticatedIdentities": false,
@@ -120,7 +120,7 @@
           },
           "permissions": "",
           "dependsOn": "",
-          "env": "master"
+          "env": "dev"
         }
       }
     },
