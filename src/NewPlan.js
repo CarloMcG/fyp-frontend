@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import { Row } from "react-bootstrap";
+
 import { Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 
@@ -71,7 +71,6 @@ function newplan() {
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
-                class="form-control form-fixer m-1 "
               ></input>
               <label class="form-check-label" for="flexRadioDefault1">
                 BillPay
@@ -82,7 +81,6 @@ function newplan() {
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
-                class="form-control form-fixer m-1 p-1"
               ></input>
               <label class="form-check-label" for="flexRadioDefault1">
                 PrePay

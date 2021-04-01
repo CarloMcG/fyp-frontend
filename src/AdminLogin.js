@@ -1,9 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
 
 function adminLogin() {
   return (

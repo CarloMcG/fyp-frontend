@@ -1,10 +1,7 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import Table from "react-bootstrap/Table";
 
 function bills() {
   return (

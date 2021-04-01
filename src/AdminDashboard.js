@@ -1,8 +1,5 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Line, Circle } from "rc-progress";
 
 function aDashboard() {
   return (
