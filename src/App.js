@@ -16,15 +16,10 @@ import AddToPlan from "./AddToPlan";
 import PrePayDashboard from "./PrePayDashboard";
 import Users from "./Users";
 import amplify, { Amplify } from "aws-amplify";
-import awsconfig from "./aws-exports";
-import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
-
-Amplify.configure(awsconfig);
 
 function App() {
   return (
     <div className="App">
-      <AmplifySignOut />
       <Route exact path="/" component={Login} />
       <Route exact path="/Admin" component={AdminLogin} />
       <Route exact path="/CustomerDashboard" component={CustomerDashboard} />
@@ -41,4 +36,4 @@ function App() {
     </div>
   );
 }
-export default withAuthenticator(App);
+export default App;
