@@ -1,7 +1,7 @@
 {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "fyp542b2f3e",
+    "resourceNameTruncated": "fyp21ce2480",
     "userPoolName": "fyp",
     "autoVerifiedAttributes": [
         "phone_number"
@@ -19,16 +19,15 @@
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
         "preferred_username",
-        "name",
-        "phone_number"
+        "name"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "fyp542b2f3e_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "fyp21ce2480_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "542b2f3e",
+    "sharedId": "21ce2480",
     "resourceName": "fyp",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
