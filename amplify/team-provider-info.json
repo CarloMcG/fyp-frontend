@@ -11,5 +11,31 @@
       "StackId": "arn:aws:cloudformation:eu-west-1:466606171273:stack/amplify-fyp-master-81218/98063200-92b9-11eb-b7e7-06da079bcb47",
       "AmplifyAppId": "dsdeb68jzzafb"
     }
+  },
+  "fyproj": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fyp-fyproj-100945-authRole",
+      "UnauthRoleArn": "arn:aws:iam::466606171273:role/amplify-fyp-fyproj-100945-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::466606171273:role/amplify-fyp-fyproj-100945-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-fyp-fyproj-100945-deployment",
+      "UnauthRoleName": "amplify-fyp-fyproj-100945-unauthRole",
+      "StackName": "amplify-fyp-fyproj-100945",
+      "StackId": "arn:aws:cloudformation:eu-west-1:466606171273:stack/amplify-fyp-fyproj-100945/00f3d140-92ca-11eb-ae87-0289b255ffdb",
+      "AmplifyAppId": "dume24t1om90p"
+    },
+    "categories": {
+      "auth": {
+        "fyp": {},
+        "fyp76126105": {}
+      },
+      "function": {
+        "fyp76126105PostConfirmation": {
+          "GROUP": "cust-bp",
+          "deploymentBucketName": "amplify-fyp-fyproj-100945-deployment",
+          "s3Key": "amplify-builds/fyp76126105PostConfirmation-464c68373471556a414a-build.zip"
+        }
+      }
+    }
   }
 }

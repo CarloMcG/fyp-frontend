@@ -1,7 +1,7 @@
 {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "fyp37966ae5",
+    "resourceNameTruncated": "fyp542b2f3e",
     "userPoolName": "fyp",
     "autoVerifiedAttributes": [
         "phone_number"
@@ -11,7 +11,7 @@
         "SMS Text Message"
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
-    "smsVerificationMessage": "Forgot password code: {####}",
+    "smsVerificationMessage": "Body {####}",
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
@@ -26,9 +26,9 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "fyp37966ae5_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "fyp542b2f3e_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "37966ae5",
+    "sharedId": "542b2f3e",
     "resourceName": "fyp",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
