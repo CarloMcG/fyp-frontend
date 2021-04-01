@@ -15,7 +15,6 @@ import NewPlan from "./NewPlan";
 import AddToPlan from "./AddToPlan";
 import PrePayDashboard from "./PrePayDashboard";
 import Users from "./Users";
-import amplify, { Amplify } from "aws-amplify";
 
 function App() {
   return (
