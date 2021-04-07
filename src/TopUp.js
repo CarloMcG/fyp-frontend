@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 
 function topup() {
   return (
-    <Container>
+    <Container fluid>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/CustomerDashboard">
           TelecomsCorp

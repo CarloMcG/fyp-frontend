@@ -25,7 +25,7 @@ function login() {
       </nav>
 
       <Row className="">
-        <div class="wall col-5">
+        <div class="wall col-5 vh-100">
           <Col>
             <h1 class="row justify-content-center">Welcome</h1>
             <div class="jumbotron  vertical-center">

@@ -11,7 +11,10 @@ const awsmobile = {
     "aws_cognito_region": "eu-west-1",
     "aws_user_pools_id": "eu-west-1_rhak8ucRL",
     "aws_user_pools_web_client_id": "2ltciek9r4j1k7hj8gsr6k80rm",
-    "oauth": {}
+    "oauth": {},
+    "aws_content_delivery_bucket": "fyp-20210407095439-hostingbucket-fyproj",
+    "aws_content_delivery_bucket_region": "eu-west-1",
+    "aws_content_delivery_url": "https://d2wclsos8gnquv.cloudfront.net"
 };
 
 
