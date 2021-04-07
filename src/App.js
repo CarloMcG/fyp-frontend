@@ -24,7 +24,6 @@ Amplify.configure(awsconfig);
 function App() {
   return (
     <div className="App">
-      <AmplifySignOut />
       <Route exact path="/" component={Login} />
       <Route exact path="/Admin" component={AdminLogin} />
       <Route exact path="/CustomerDashboard" component={CustomerDashboard} />

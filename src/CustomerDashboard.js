@@ -41,15 +41,8 @@ function cDashboard() {
             </li>
           </ul>
         </div>
-        <div class="btn-group float-right">
-          <a
-            href="/"
-            class="btn btn-primary btn-lg active"
-            role="button"
-            aria-pressed="true"
-          >
-            logout
-          </a>
+        <div class=" float-right">
+          <AmplifySignOut />
         </div>
       </nav>
       <h1>Hello, $User</h1>
