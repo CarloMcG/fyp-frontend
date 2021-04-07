@@ -15,11 +15,6 @@ import NewPlan from "./NewPlan";
 import AddToPlan from "./AddToPlan";
 import PrePayDashboard from "./PrePayDashboard";
 import Users from "./Users";
-import amplify, { Amplify } from "aws-amplify";
-import awsconfig from "./aws-exports";
-import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
-
-Amplify.configure(awsconfig);
 
 function App() {
   return (
@@ -40,4 +35,4 @@ function App() {
     </div>
   );
 }
-export default withAuthenticator(App);
+export default App;

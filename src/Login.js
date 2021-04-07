@@ -1,29 +1,17 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
+
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import {
+  AmplifyAuthenticator,
+  AmplifySignUp,
+  AmplifySignIn,
+} from "@aws-amplify/ui-react";
 
 function login() {
   return (
     <Container fluid>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/CustomerDashboard">
-          TelecomsCorp
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
-        <div class="btn-group float-right">
-          <a
-            href="/admin"
-            class="btn btn-primary btn-lg active"
-            role="button"
-            aria-pressed="true"
-          >
-            Admin
-          </a>
-        </div>
-      </nav>
-
       <Row className="">
         <div class="wall col-5 vh-100">
           <Col>
@@ -44,40 +32,33 @@ function login() {
 
         <Col class="row justify-content-center">
           <div class="jumbotron vertical-center row justify-content-center">
-            <Form class="form-inline">
-              <label class="row justify-content-center">
-                <h1>Log In</h1>
-              </label>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label class="row justify-content-center">
-                  Username
-                </Form.Label>
-                <Form.Control type="username" placeholder="Username" />
-              </Form.Group>
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label class="row justify-content-center">
-                  Password
-                </Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Password"
-                  class="row justify-content-center"
-                />
-              </Form.Group>
-              <Form.Group controlId="formBasicCheckbox"></Form.Group>
-              <div class="row justify-content-center">
-                <div class="btn-group float-right">
-                  <a
-                    href="/CustomerDashboard"
-                    class="btn btn-primary btn-lg active"
-                    role="button"
-                    aria-pressed="true"
-                  >
-                    Login
-                  </a>
-                </div>
-              </div>
-            </Form>
+            <AmplifyAuthenticator usernameAlias="username">
+              <AmplifySignUp
+                slot="sign-up"
+                usernameAlias="username"
+                formFields={[
+                  {
+                    type: "username",
+                    label: "Custom username Label",
+                    placeholder: "custom username placeholder",
+                    required: true,
+                  },
+                  {
+                    type: "password",
+                    label: "Custom Password Label",
+                    placeholder: "custom password placeholder",
+                    required: true,
+                  },
+                  {
+                    type: "phone_number",
+                    label: "Custom Phone Label",
+                    placeholder: "custom Phone placeholder",
+                    required: false,
+                  },
+                ]}
+              />
+              <AmplifySignIn slot="sign-in" usernameAlias="username" />
+            </AmplifyAuthenticator>
           </div>
         </Col>
       </Row>
