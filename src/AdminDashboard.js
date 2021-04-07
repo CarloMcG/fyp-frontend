@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 function aDashboard() {
   return (
     <Container fluid>
@@ -39,15 +39,8 @@ function aDashboard() {
             </li>
           </ul>
         </div>
-        <div class="btn-group float-right">
-          <a
-            href="/admin"
-            class="btn btn-primary btn-lg active"
-            role="button"
-            aria-pressed="true"
-          >
-            logout
-          </a>
+        <div class=" float-right">
+          <AmplifySignOut />
         </div>
       </nav>
       <div class="row justify-content-center">

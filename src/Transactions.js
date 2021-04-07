@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 function transactions() {
   return (
     <Container fluid>
@@ -41,15 +41,8 @@ function transactions() {
             </li>
           </ul>
         </div>
-        <div class="btn-group float-right">
-          <a
-            href="/"
-            class="btn btn-primary btn-lg active"
-            role="button"
-            aria-pressed="true"
-          >
-            logout
-          </a>
+        <div class=" float-right">
+          <AmplifySignOut />
         </div>
       </nav>
       <Col>

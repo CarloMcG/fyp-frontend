@@ -113,7 +113,6 @@ Parameters:
     Type: String
   
             
-            
   useDefault:
     Type: String
   
@@ -130,21 +129,17 @@ Parameters:
   adminQueries:
     Type: String
             
-            
-  
-  thirdPartyAuth:
-    Type: String
-            
-        
-  authProviders:
-    Type: CommaDelimitedList
-      
   
   usernameCaseSensitive:
     Type: String
             
         
   dependsOn:
+    Type: CommaDelimitedList
+      
+            
+        
+  authProviders:
     Type: CommaDelimitedList
       
 Conditions:

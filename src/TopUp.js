@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import { Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 function topup() {
   return (
     <Container fluid>
@@ -41,15 +41,8 @@ function topup() {
             </li>
           </ul>
         </div>
-        <div class="btn-group float-right">
-          <a
-            href="/"
-            class="btn btn-primary btn-lg active"
-            role="button"
-            aria-pressed="true"
-          >
-            logout
-          </a>
+        <div class=" float-right">
+          <AmplifySignOut />
         </div>
       </nav>
       <Col class="row justify-content-center">

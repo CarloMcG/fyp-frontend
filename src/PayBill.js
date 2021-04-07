@@ -3,7 +3,7 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
-
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 function PayBill() {
   return (
     <Container fluid>
@@ -42,15 +42,8 @@ function PayBill() {
             </li>
           </ul>
         </div>
-        <div class="btn-group float-right">
-          <a
-            href="/"
-            class="btn btn-primary btn-lg active"
-            role="button"
-            aria-pressed="true"
-          >
-            logout
-          </a>
+        <div class=" float-right">
+          <AmplifySignOut />
         </div>
       </nav>
       <div class="jumbotron row justify-content-center">

@@ -1,5 +1,5 @@
 import React from "react";
-
+import background from "./background.png";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
@@ -11,26 +11,19 @@ import {
 
 function login() {
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        backgroundImage: `url(${background})`,
+      }}
+    >
       <Row className="">
-        <div class="wall col-5 vh-100">
-          <Col>
-            <h1 class="row justify-content-center">Welcome</h1>
-            <div class="jumbotron  vertical-center">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-          </Col>
+        <div class=" col-5">
+          <Col></Col>
         </div>
 
         <Col class="row justify-content-center">
+          <h1 class="headline">TelecomsCorp</h1>
           <div class="jumbotron vertical-center row justify-content-center">
             <AmplifyAuthenticator usernameAlias="username">
               <AmplifySignUp

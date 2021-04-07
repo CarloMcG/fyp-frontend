@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 
 import { Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 function newplan() {
   return (
     <Container fluid>
@@ -42,15 +42,8 @@ function newplan() {
             </li>
           </ul>
         </div>
-        <div class="btn-group float-right">
-          <a
-            href="/admin"
-            class="btn btn-primary btn-lg active"
-            role="button"
-            aria-pressed="true"
-          >
-            logout
-          </a>
+        <div class=" float-right">
+          <AmplifySignOut />
         </div>
       </nav>
 

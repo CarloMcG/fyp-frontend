@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { Circle } from "rc-progress";
-
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 function PrePayDashboard() {
   return (
     <Container fluid>
@@ -40,15 +40,8 @@ function PrePayDashboard() {
             </li>
           </ul>
         </div>
-        <div class="btn-group float-right">
-          <a
-            href="/"
-            class="btn btn-primary btn-lg active"
-            role="button"
-            aria-pressed="true"
-          >
-            logout
-          </a>
+        <div class=" float-right">
+          <AmplifySignOut />
         </div>
       </nav>
       <h1 class="float-left">Hello, $User</h1>
