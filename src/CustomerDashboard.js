@@ -1,4 +1,5 @@
 import React from "react";
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 
 import Container from "react-bootstrap/Container";
 import { Circle } from "rc-progress";
