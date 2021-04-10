@@ -28,6 +28,11 @@ function bills() {
               <a class="nav-link" href="/CustomerDashboard">
                 Dashboard
               </a>
+            </li>{" "}
+            <li class="nav-item">
+              <a class="nav-link" href="/BpCalls">
+                Calls
+              </a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="/Bills">

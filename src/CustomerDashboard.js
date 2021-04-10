@@ -31,6 +31,11 @@ function cDashboard() {
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/BpCalls">
+                Calls
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/Bills">
                 Bills
               </a>

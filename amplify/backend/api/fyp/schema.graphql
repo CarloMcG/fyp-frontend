@@ -1,13 +1,39 @@
+type UserModel @model @auth(rules: [{allow: public}]) @key(name: "byPlanModel", fields: ["planmodelID"]) {
+  id: ID!
+  Name: String!
+  PhoneNum: Int!
+  AccountType: String!
+  Plan: ID!
+  UserModelPlanModels: PlanModel @connection
+  CallModels: [CallModel] @connection(keyName: "byUserModel", fields: ["id"])
+  planmodelID: ID!
+}
+
+type CallModel @model @auth(rules: [{allow: public}]) @key(name: "byUserModel", fields: ["usermodelID"]) @key(name: "byPlanModel", fields: ["planmodelID"]) {
+  id: ID!
+  NumCalling: Int!
+  NumCalled: Int!
+  StartTime: AWSTime!
+  EndTime: AWSDateTime!
+  CallType: String!
+  Cost: Float!
+  usermodelID: ID!
+  planmodelID: ID!
+}
+
 type PlanModel @model @auth(rules: [{allow: public}]) {
   id: ID!
-  type: Boolean
-  MobileMinutes: Int
-  MobileRate: Float
-  LandlineMinutes: Int
-  LandlineRate: Float
-  IntMinutes: Int
-  IntRate: Float
-  PremMinutes: Int
-  PremRate: Float
-  CostPerMonth: Int
+  type: Boolean!
+  MobileMinutes: Int!
+  MobileRate: Float!
+  LandlineMinutes: Int!
+  LandlineRate: Float!
+  IntMinutes: Int!
+  IntRate: Float!
+  PremMinutes: Int!
+  PremRate: Float!
+  CostPerMonth: Int!
+  UserModels: [UserModel] @connection(keyName: "byPlanModel", fields: ["id"])
+  CallModels: [CallModel] @connection(keyName: "byPlanModel", fields: ["id"])
 }
+ 

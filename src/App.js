@@ -7,6 +7,8 @@ import AdminLogin from "./AdminLogin";
 import CustomerDashboard from "./CustomerDashboard";
 import AdminDashboard from "./AdminDashboard";
 import Bills from "./Bills";
+import BpCalls from "./BpCalls";
+import PpCalls from "./PpCalls";
 import PayBill from "./PayBill";
 import Transactions from "./Transactions";
 import TopUp from "./TopUp";
@@ -29,6 +31,8 @@ function App() {
       <Route exact path="/CustomerDashboard" component={CustomerDashboard} />
       <Route exact path="/AdminDashboard" component={AdminDashboard} />
       <Route exact path="/Bills" component={Bills} />
+      <Route exact path="/BpCalls" component={BpCalls} />
+      <Route exact path="/PpCalls" component={PpCalls} />
       <Route exact path="/PayBill" component={PayBill} />
       <Route exact path="/Transactions" component={Transactions} />
       <Route exact path="/TopUp" component={TopUp} />

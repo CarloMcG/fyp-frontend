@@ -27,6 +27,11 @@ function PrePayDashboard() {
               <a class="nav-link" href="/PrePayDashboard">
                 Dashboard<span class="sr-only">(current)</span>
               </a>
+            </li>{" "}
+            <li class="nav-item">
+              <a class="nav-link " href="/PpCalls">
+                Calls
+              </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/Transactions">
