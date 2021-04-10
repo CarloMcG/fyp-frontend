@@ -18,13 +18,17 @@ function login() {
       }}
     >
       <Row className="">
-        <div class=" col-5">
-          <Col></Col>
-        </div>
-
         <Col class="row justify-content-center">
-          <h1 class="headline">TelecomsCorp</h1>
-          <div class="jumbotron vertical-center row justify-content-center">
+          <h1
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              color: "white",
+            }}
+          >
+            TelecomsCorp
+          </h1>
+          <div style={{ display: "flex", justifyContent: "center" }}>
             <AmplifyAuthenticator usernameAlias="username">
               <AmplifySignUp
                 slot="sign-up"
