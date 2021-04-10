@@ -16,6 +16,11 @@ import AddToPlan from "./AddToPlan";
 import PrePayDashboard from "./PrePayDashboard";
 import Users from "./Users";
 
+import Amplify, { Auth } from "aws-amplify";
+import awsconfig from "./aws-exports";
+
+Amplify.configure(awsconfig);
+
 function App() {
   return (
     <div className="App">
