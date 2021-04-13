@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "UserModel": {
-            "name": "UserModel",
+        "User": {
+            "name": "User",
             "fields": {
                 "id": {
                     "name": "id",
@@ -42,20 +42,20 @@ export const schema = {
                     "name": "UserModelPlanModels",
                     "isArray": false,
                     "type": {
-                        "model": "PlanModel"
+                        "model": "Plan"
                     },
                     "isRequired": false,
                     "attributes": [],
                     "association": {
                         "connectionType": "BELONGS_TO",
-                        "targetName": "userModelUserModelPlanModelsId"
+                        "targetName": "userUserModelPlanModelsId"
                     }
                 },
                 "CallModels": {
                     "name": "CallModels",
                     "isArray": true,
                     "type": {
-                        "model": "CallModel"
+                        "model": "Call"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -69,12 +69,12 @@ export const schema = {
                     "name": "planmodelID",
                     "isArray": false,
                     "type": "ID",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "UserModels",
+            "pluralName": "Users",
             "attributes": [
                 {
                     "type": "model",
@@ -83,7 +83,7 @@ export const schema = {
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byPlanModel",
+                        "name": "byPlan",
                         "fields": [
                             "planmodelID"
                         ]
@@ -107,8 +107,8 @@ export const schema = {
                 }
             ]
         },
-        "PlanModel": {
-            "name": "PlanModel",
+        "Plan": {
+            "name": "Plan",
             "fields": {
                 "id": {
                     "name": "id",
@@ -117,73 +117,66 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "type": {
-                    "name": "type",
+                "planType": {
+                    "name": "planType",
                     "isArray": false,
-                    "type": "Boolean",
+                    "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "MobileMinutes": {
-                    "name": "MobileMinutes",
+                "mobileMinutes": {
+                    "name": "mobileMinutes",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": true,
                     "attributes": []
                 },
-                "MobileRate": {
-                    "name": "MobileRate",
+                "mobileRate": {
+                    "name": "mobileRate",
                     "isArray": false,
                     "type": "Float",
                     "isRequired": true,
                     "attributes": []
                 },
-                "LandlineMinutes": {
-                    "name": "LandlineMinutes",
+                "landlineMinutes": {
+                    "name": "landlineMinutes",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": true,
                     "attributes": []
                 },
-                "LandlineRate": {
-                    "name": "LandlineRate",
+                "landlineRate": {
+                    "name": "landlineRate",
                     "isArray": false,
                     "type": "Float",
                     "isRequired": true,
                     "attributes": []
                 },
-                "IntMinutes": {
-                    "name": "IntMinutes",
+                "internationalMinutes": {
+                    "name": "internationalMinutes",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": true,
                     "attributes": []
                 },
-                "IntRate": {
-                    "name": "IntRate",
+                "internationalRate": {
+                    "name": "internationalRate",
                     "isArray": false,
                     "type": "Float",
                     "isRequired": true,
                     "attributes": []
                 },
-                "PremMinutes": {
-                    "name": "PremMinutes",
+                "premiumMinutes": {
+                    "name": "premiumMinutes",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": true,
                     "attributes": []
                 },
-                "PremRate": {
-                    "name": "PremRate",
+                "premiumRate": {
+                    "name": "premiumRate",
                     "isArray": false,
                     "type": "Float",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "CostPerMonth": {
-                    "name": "CostPerMonth",
-                    "isArray": false,
-                    "type": "Int",
                     "isRequired": true,
                     "attributes": []
                 },
@@ -191,7 +184,7 @@ export const schema = {
                     "name": "UserModels",
                     "isArray": true,
                     "type": {
-                        "model": "UserModel"
+                        "model": "User"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -205,7 +198,7 @@ export const schema = {
                     "name": "CallModels",
                     "isArray": true,
                     "type": {
-                        "model": "CallModel"
+                        "model": "Call"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -214,10 +207,17 @@ export const schema = {
                         "connectionType": "HAS_MANY",
                         "associatedWith": "planmodelID"
                     }
+                },
+                "costPerMonth": {
+                    "name": "costPerMonth",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": true,
+                    "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "PlanModels",
+            "pluralName": "Plans",
             "attributes": [
                 {
                     "type": "model",
@@ -241,8 +241,8 @@ export const schema = {
                 }
             ]
         },
-        "CallModel": {
-            "name": "CallModel",
+        "Call": {
+            "name": "Call",
             "fields": {
                 "id": {
                     "name": "id",
@@ -297,19 +297,19 @@ export const schema = {
                     "name": "usermodelID",
                     "isArray": false,
                     "type": "ID",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 },
                 "planmodelID": {
                     "name": "planmodelID",
                     "isArray": false,
                     "type": "ID",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "CallModels",
+            "pluralName": "Calls",
             "attributes": [
                 {
                     "type": "model",
@@ -318,7 +318,7 @@ export const schema = {
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byUserModel",
+                        "name": "byUser",
                         "fields": [
                             "usermodelID"
                         ]
@@ -327,7 +327,7 @@ export const schema = {
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byPlanModel",
+                        "name": "byPlan",
                         "fields": [
                             "planmodelID"
                         ]
@@ -354,5 +354,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "4f022793538d7addb17d51ad557ec4e4"
+    "version": "7d93fe4a4487295284259619f0e742ee"
 };

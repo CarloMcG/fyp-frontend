@@ -1,12 +1,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createUserModel = /* GraphQL */ `
-  mutation CreateUserModel(
-    $input: CreateUserModelInput!
-    $condition: ModelUserModelConditionInput
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    createUserModel(input: $input, condition: $condition) {
+    createUser(input: $input, condition: $condition) {
       id
       Name
       PhoneNum
@@ -24,16 +24,16 @@ export const createUserModel = /* GraphQL */ `
       }
       UserModelPlanModels {
         id
-        type
-        MobileMinutes
-        MobileRate
-        LandlineMinutes
-        LandlineRate
-        IntMinutes
-        IntRate
-        PremMinutes
-        PremRate
-        CostPerMonth
+        planType
+        mobileMinutes
+        mobileRate
+        landlineMinutes
+        landlineRate
+        internationalMinutes
+        internationalRate
+        premiumMinutes
+        premiumRate
+        costPerMonth
         _version
         _deleted
         _lastChangedAt
@@ -43,12 +43,12 @@ export const createUserModel = /* GraphQL */ `
     }
   }
 `;
-export const updateUserModel = /* GraphQL */ `
-  mutation UpdateUserModel(
-    $input: UpdateUserModelInput!
-    $condition: ModelUserModelConditionInput
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    updateUserModel(input: $input, condition: $condition) {
+    updateUser(input: $input, condition: $condition) {
       id
       Name
       PhoneNum
@@ -66,16 +66,16 @@ export const updateUserModel = /* GraphQL */ `
       }
       UserModelPlanModels {
         id
-        type
-        MobileMinutes
-        MobileRate
-        LandlineMinutes
-        LandlineRate
-        IntMinutes
-        IntRate
-        PremMinutes
-        PremRate
-        CostPerMonth
+        planType
+        mobileMinutes
+        mobileRate
+        landlineMinutes
+        landlineRate
+        internationalMinutes
+        internationalRate
+        premiumMinutes
+        premiumRate
+        costPerMonth
         _version
         _deleted
         _lastChangedAt
@@ -85,12 +85,12 @@ export const updateUserModel = /* GraphQL */ `
     }
   }
 `;
-export const deleteUserModel = /* GraphQL */ `
-  mutation DeleteUserModel(
-    $input: DeleteUserModelInput!
-    $condition: ModelUserModelConditionInput
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    deleteUserModel(input: $input, condition: $condition) {
+    deleteUser(input: $input, condition: $condition) {
       id
       Name
       PhoneNum
@@ -108,16 +108,16 @@ export const deleteUserModel = /* GraphQL */ `
       }
       UserModelPlanModels {
         id
-        type
-        MobileMinutes
-        MobileRate
-        LandlineMinutes
-        LandlineRate
-        IntMinutes
-        IntRate
-        PremMinutes
-        PremRate
-        CostPerMonth
+        planType
+        mobileMinutes
+        mobileRate
+        landlineMinutes
+        landlineRate
+        internationalMinutes
+        internationalRate
+        premiumMinutes
+        premiumRate
+        costPerMonth
         _version
         _deleted
         _lastChangedAt
@@ -127,12 +127,12 @@ export const deleteUserModel = /* GraphQL */ `
     }
   }
 `;
-export const createCallModel = /* GraphQL */ `
-  mutation CreateCallModel(
-    $input: CreateCallModelInput!
-    $condition: ModelCallModelConditionInput
+export const createCall = /* GraphQL */ `
+  mutation CreateCall(
+    $input: CreateCallInput!
+    $condition: ModelCallConditionInput
   ) {
-    createCallModel(input: $input, condition: $condition) {
+    createCall(input: $input, condition: $condition) {
       id
       NumCalling
       NumCalled
@@ -150,12 +150,12 @@ export const createCallModel = /* GraphQL */ `
     }
   }
 `;
-export const updateCallModel = /* GraphQL */ `
-  mutation UpdateCallModel(
-    $input: UpdateCallModelInput!
-    $condition: ModelCallModelConditionInput
+export const updateCall = /* GraphQL */ `
+  mutation UpdateCall(
+    $input: UpdateCallInput!
+    $condition: ModelCallConditionInput
   ) {
-    updateCallModel(input: $input, condition: $condition) {
+    updateCall(input: $input, condition: $condition) {
       id
       NumCalling
       NumCalled
@@ -173,12 +173,12 @@ export const updateCallModel = /* GraphQL */ `
     }
   }
 `;
-export const deleteCallModel = /* GraphQL */ `
-  mutation DeleteCallModel(
-    $input: DeleteCallModelInput!
-    $condition: ModelCallModelConditionInput
+export const deleteCall = /* GraphQL */ `
+  mutation DeleteCall(
+    $input: DeleteCallInput!
+    $condition: ModelCallConditionInput
   ) {
-    deleteCallModel(input: $input, condition: $condition) {
+    deleteCall(input: $input, condition: $condition) {
       id
       NumCalling
       NumCalled
@@ -196,23 +196,23 @@ export const deleteCallModel = /* GraphQL */ `
     }
   }
 `;
-export const createPlanModel = /* GraphQL */ `
-  mutation CreatePlanModel(
-    $input: CreatePlanModelInput!
-    $condition: ModelPlanModelConditionInput
+export const createPlan = /* GraphQL */ `
+  mutation CreatePlan(
+    $input: CreatePlanInput!
+    $condition: ModelPlanConditionInput
   ) {
-    createPlanModel(input: $input, condition: $condition) {
+    createPlan(input: $input, condition: $condition) {
       id
-      type
-      MobileMinutes
-      MobileRate
-      LandlineMinutes
-      LandlineRate
-      IntMinutes
-      IntRate
-      PremMinutes
-      PremRate
-      CostPerMonth
+      planType
+      mobileMinutes
+      mobileRate
+      landlineMinutes
+      landlineRate
+      internationalMinutes
+      internationalRate
+      premiumMinutes
+      premiumRate
+      costPerMonth
       _version
       _deleted
       _lastChangedAt
@@ -229,23 +229,23 @@ export const createPlanModel = /* GraphQL */ `
     }
   }
 `;
-export const updatePlanModel = /* GraphQL */ `
-  mutation UpdatePlanModel(
-    $input: UpdatePlanModelInput!
-    $condition: ModelPlanModelConditionInput
+export const updatePlan = /* GraphQL */ `
+  mutation UpdatePlan(
+    $input: UpdatePlanInput!
+    $condition: ModelPlanConditionInput
   ) {
-    updatePlanModel(input: $input, condition: $condition) {
+    updatePlan(input: $input, condition: $condition) {
       id
-      type
-      MobileMinutes
-      MobileRate
-      LandlineMinutes
-      LandlineRate
-      IntMinutes
-      IntRate
-      PremMinutes
-      PremRate
-      CostPerMonth
+      planType
+      mobileMinutes
+      mobileRate
+      landlineMinutes
+      landlineRate
+      internationalMinutes
+      internationalRate
+      premiumMinutes
+      premiumRate
+      costPerMonth
       _version
       _deleted
       _lastChangedAt
@@ -262,23 +262,23 @@ export const updatePlanModel = /* GraphQL */ `
     }
   }
 `;
-export const deletePlanModel = /* GraphQL */ `
-  mutation DeletePlanModel(
-    $input: DeletePlanModelInput!
-    $condition: ModelPlanModelConditionInput
+export const deletePlan = /* GraphQL */ `
+  mutation DeletePlan(
+    $input: DeletePlanInput!
+    $condition: ModelPlanConditionInput
   ) {
-    deletePlanModel(input: $input, condition: $condition) {
+    deletePlan(input: $input, condition: $condition) {
       id
-      type
-      MobileMinutes
-      MobileRate
-      LandlineMinutes
-      LandlineRate
-      IntMinutes
-      IntRate
-      PremMinutes
-      PremRate
-      CostPerMonth
+      planType
+      mobileMinutes
+      mobileRate
+      landlineMinutes
+      landlineRate
+      internationalMinutes
+      internationalRate
+      premiumMinutes
+      premiumRate
+      costPerMonth
       _version
       _deleted
       _lastChangedAt

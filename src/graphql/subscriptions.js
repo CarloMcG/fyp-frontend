@@ -1,9 +1,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateUserModel = /* GraphQL */ `
-  subscription OnCreateUserModel {
-    onCreateUserModel {
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser {
+    onCreateUser {
       id
       Name
       PhoneNum
@@ -21,16 +21,16 @@ export const onCreateUserModel = /* GraphQL */ `
       }
       UserModelPlanModels {
         id
-        type
-        MobileMinutes
-        MobileRate
-        LandlineMinutes
-        LandlineRate
-        IntMinutes
-        IntRate
-        PremMinutes
-        PremRate
-        CostPerMonth
+        planType
+        mobileMinutes
+        mobileRate
+        landlineMinutes
+        landlineRate
+        internationalMinutes
+        internationalRate
+        premiumMinutes
+        premiumRate
+        costPerMonth
         _version
         _deleted
         _lastChangedAt
@@ -40,9 +40,9 @@ export const onCreateUserModel = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateUserModel = /* GraphQL */ `
-  subscription OnUpdateUserModel {
-    onUpdateUserModel {
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser {
+    onUpdateUser {
       id
       Name
       PhoneNum
@@ -60,16 +60,16 @@ export const onUpdateUserModel = /* GraphQL */ `
       }
       UserModelPlanModels {
         id
-        type
-        MobileMinutes
-        MobileRate
-        LandlineMinutes
-        LandlineRate
-        IntMinutes
-        IntRate
-        PremMinutes
-        PremRate
-        CostPerMonth
+        planType
+        mobileMinutes
+        mobileRate
+        landlineMinutes
+        landlineRate
+        internationalMinutes
+        internationalRate
+        premiumMinutes
+        premiumRate
+        costPerMonth
         _version
         _deleted
         _lastChangedAt
@@ -79,9 +79,9 @@ export const onUpdateUserModel = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteUserModel = /* GraphQL */ `
-  subscription OnDeleteUserModel {
-    onDeleteUserModel {
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser {
+    onDeleteUser {
       id
       Name
       PhoneNum
@@ -99,16 +99,16 @@ export const onDeleteUserModel = /* GraphQL */ `
       }
       UserModelPlanModels {
         id
-        type
-        MobileMinutes
-        MobileRate
-        LandlineMinutes
-        LandlineRate
-        IntMinutes
-        IntRate
-        PremMinutes
-        PremRate
-        CostPerMonth
+        planType
+        mobileMinutes
+        mobileRate
+        landlineMinutes
+        landlineRate
+        internationalMinutes
+        internationalRate
+        premiumMinutes
+        premiumRate
+        costPerMonth
         _version
         _deleted
         _lastChangedAt
@@ -118,9 +118,9 @@ export const onDeleteUserModel = /* GraphQL */ `
     }
   }
 `;
-export const onCreateCallModel = /* GraphQL */ `
-  subscription OnCreateCallModel {
-    onCreateCallModel {
+export const onCreateCall = /* GraphQL */ `
+  subscription OnCreateCall {
+    onCreateCall {
       id
       NumCalling
       NumCalled
@@ -138,9 +138,9 @@ export const onCreateCallModel = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateCallModel = /* GraphQL */ `
-  subscription OnUpdateCallModel {
-    onUpdateCallModel {
+export const onUpdateCall = /* GraphQL */ `
+  subscription OnUpdateCall {
+    onUpdateCall {
       id
       NumCalling
       NumCalled
@@ -158,9 +158,9 @@ export const onUpdateCallModel = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteCallModel = /* GraphQL */ `
-  subscription OnDeleteCallModel {
-    onDeleteCallModel {
+export const onDeleteCall = /* GraphQL */ `
+  subscription OnDeleteCall {
+    onDeleteCall {
       id
       NumCalling
       NumCalled
@@ -178,20 +178,20 @@ export const onDeleteCallModel = /* GraphQL */ `
     }
   }
 `;
-export const onCreatePlanModel = /* GraphQL */ `
-  subscription OnCreatePlanModel {
-    onCreatePlanModel {
+export const onCreatePlan = /* GraphQL */ `
+  subscription OnCreatePlan {
+    onCreatePlan {
       id
-      type
-      MobileMinutes
-      MobileRate
-      LandlineMinutes
-      LandlineRate
-      IntMinutes
-      IntRate
-      PremMinutes
-      PremRate
-      CostPerMonth
+      planType
+      mobileMinutes
+      mobileRate
+      landlineMinutes
+      landlineRate
+      internationalMinutes
+      internationalRate
+      premiumMinutes
+      premiumRate
+      costPerMonth
       _version
       _deleted
       _lastChangedAt
@@ -208,20 +208,20 @@ export const onCreatePlanModel = /* GraphQL */ `
     }
   }
 `;
-export const onUpdatePlanModel = /* GraphQL */ `
-  subscription OnUpdatePlanModel {
-    onUpdatePlanModel {
+export const onUpdatePlan = /* GraphQL */ `
+  subscription OnUpdatePlan {
+    onUpdatePlan {
       id
-      type
-      MobileMinutes
-      MobileRate
-      LandlineMinutes
-      LandlineRate
-      IntMinutes
-      IntRate
-      PremMinutes
-      PremRate
-      CostPerMonth
+      planType
+      mobileMinutes
+      mobileRate
+      landlineMinutes
+      landlineRate
+      internationalMinutes
+      internationalRate
+      premiumMinutes
+      premiumRate
+      costPerMonth
       _version
       _deleted
       _lastChangedAt
@@ -238,20 +238,20 @@ export const onUpdatePlanModel = /* GraphQL */ `
     }
   }
 `;
-export const onDeletePlanModel = /* GraphQL */ `
-  subscription OnDeletePlanModel {
-    onDeletePlanModel {
+export const onDeletePlan = /* GraphQL */ `
+  subscription OnDeletePlan {
+    onDeletePlan {
       id
-      type
-      MobileMinutes
-      MobileRate
-      LandlineMinutes
-      LandlineRate
-      IntMinutes
-      IntRate
-      PremMinutes
-      PremRate
-      CostPerMonth
+      planType
+      mobileMinutes
+      mobileRate
+      landlineMinutes
+      landlineRate
+      internationalMinutes
+      internationalRate
+      premiumMinutes
+      premiumRate
+      costPerMonth
       _version
       _deleted
       _lastChangedAt

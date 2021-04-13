@@ -4,38 +4,38 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-export declare class UserModel {
+export declare class User {
   readonly id: string;
   readonly Name: string;
   readonly PhoneNum: number;
   readonly AccountType: string;
   readonly Plan: string;
-  readonly UserModelPlanModels?: PlanModel;
-  readonly CallModels?: (CallModel | null)[];
-  readonly planmodelID: string;
-  constructor(init: ModelInit<UserModel>);
-  static copyOf(source: UserModel, mutator: (draft: MutableModel<UserModel>) => MutableModel<UserModel> | void): UserModel;
+  readonly UserModelPlanModels?: Plan;
+  readonly CallModels?: (Call | null)[];
+  readonly planmodelID?: string;
+  constructor(init: ModelInit<User>);
+  static copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
 }
 
-export declare class PlanModel {
+export declare class Plan {
   readonly id: string;
-  readonly type: boolean;
-  readonly MobileMinutes: number;
-  readonly MobileRate: number;
-  readonly LandlineMinutes: number;
-  readonly LandlineRate: number;
-  readonly IntMinutes: number;
-  readonly IntRate: number;
-  readonly PremMinutes: number;
-  readonly PremRate: number;
-  readonly CostPerMonth: number;
-  readonly UserModels?: (UserModel | null)[];
-  readonly CallModels?: (CallModel | null)[];
-  constructor(init: ModelInit<PlanModel>);
-  static copyOf(source: PlanModel, mutator: (draft: MutableModel<PlanModel>) => MutableModel<PlanModel> | void): PlanModel;
+  readonly planType: string;
+  readonly mobileMinutes: number;
+  readonly mobileRate: number;
+  readonly landlineMinutes: number;
+  readonly landlineRate: number;
+  readonly internationalMinutes: number;
+  readonly internationalRate: number;
+  readonly premiumMinutes: number;
+  readonly premiumRate: number;
+  readonly UserModels?: (User | null)[];
+  readonly CallModels?: (Call | null)[];
+  readonly costPerMonth: number;
+  constructor(init: ModelInit<Plan>);
+  static copyOf(source: Plan, mutator: (draft: MutableModel<Plan>) => MutableModel<Plan> | void): Plan;
 }
 
-export declare class CallModel {
+export declare class Call {
   readonly id: string;
   readonly NumCalling: number;
   readonly NumCalled: number;
@@ -43,8 +43,8 @@ export declare class CallModel {
   readonly EndTime: string;
   readonly CallType: string;
   readonly Cost: number;
-  readonly usermodelID: string;
-  readonly planmodelID: string;
-  constructor(init: ModelInit<CallModel>);
-  static copyOf(source: CallModel, mutator: (draft: MutableModel<CallModel>) => MutableModel<CallModel> | void): CallModel;
+  readonly usermodelID?: string;
+  readonly planmodelID?: string;
+  constructor(init: ModelInit<Call>);
+  static copyOf(source: Call, mutator: (draft: MutableModel<Call>) => MutableModel<Call> | void): Call;
 }

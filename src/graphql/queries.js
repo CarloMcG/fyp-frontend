@@ -1,9 +1,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getUserModel = /* GraphQL */ `
-  query GetUserModel($id: ID!) {
-    getUserModel(id: $id) {
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
       id
       Name
       PhoneNum
@@ -21,16 +21,16 @@ export const getUserModel = /* GraphQL */ `
       }
       UserModelPlanModels {
         id
-        type
-        MobileMinutes
-        MobileRate
-        LandlineMinutes
-        LandlineRate
-        IntMinutes
-        IntRate
-        PremMinutes
-        PremRate
-        CostPerMonth
+        planType
+        mobileMinutes
+        mobileRate
+        landlineMinutes
+        landlineRate
+        internationalMinutes
+        internationalRate
+        premiumMinutes
+        premiumRate
+        costPerMonth
         _version
         _deleted
         _lastChangedAt
@@ -40,13 +40,13 @@ export const getUserModel = /* GraphQL */ `
     }
   }
 `;
-export const listUserModels = /* GraphQL */ `
-  query ListUserModels(
-    $filter: ModelUserModelFilterInput
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listUserModels(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         Name
@@ -65,14 +65,14 @@ export const listUserModels = /* GraphQL */ `
     }
   }
 `;
-export const syncUserModels = /* GraphQL */ `
-  query SyncUserModels(
-    $filter: ModelUserModelFilterInput
+export const syncUsers = /* GraphQL */ `
+  query SyncUsers(
+    $filter: ModelUserFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncUserModels(
+    syncUsers(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -96,9 +96,9 @@ export const syncUserModels = /* GraphQL */ `
     }
   }
 `;
-export const getCallModel = /* GraphQL */ `
-  query GetCallModel($id: ID!) {
-    getCallModel(id: $id) {
+export const getCall = /* GraphQL */ `
+  query GetCall($id: ID!) {
+    getCall(id: $id) {
       id
       NumCalling
       NumCalled
@@ -116,13 +116,13 @@ export const getCallModel = /* GraphQL */ `
     }
   }
 `;
-export const listCallModels = /* GraphQL */ `
-  query ListCallModels(
-    $filter: ModelCallModelFilterInput
+export const listCalls = /* GraphQL */ `
+  query ListCalls(
+    $filter: ModelCallFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listCallModels(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listCalls(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         NumCalling
@@ -144,14 +144,14 @@ export const listCallModels = /* GraphQL */ `
     }
   }
 `;
-export const syncCallModels = /* GraphQL */ `
-  query SyncCallModels(
-    $filter: ModelCallModelFilterInput
+export const syncCalls = /* GraphQL */ `
+  query SyncCalls(
+    $filter: ModelCallFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncCallModels(
+    syncCalls(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -178,25 +178,25 @@ export const syncCallModels = /* GraphQL */ `
     }
   }
 `;
-export const listPlanModels = /* GraphQL */ `
-  query ListPlanModels(
-    $filter: ModelPlanModelFilterInput
+export const listPlans = /* GraphQL */ `
+  query ListPlans(
+    $filter: ModelPlanFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPlanModels(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listPlans(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        type
-        MobileMinutes
-        MobileRate
-        LandlineMinutes
-        LandlineRate
-        IntMinutes
-        IntRate
-        PremMinutes
-        PremRate
-        CostPerMonth
+        planType
+        mobileMinutes
+        mobileRate
+        landlineMinutes
+        landlineRate
+        internationalMinutes
+        internationalRate
+        premiumMinutes
+        premiumRate
+        costPerMonth
         _version
         _deleted
         _lastChangedAt
@@ -208,20 +208,20 @@ export const listPlanModels = /* GraphQL */ `
     }
   }
 `;
-export const getPlanModel = /* GraphQL */ `
-  query GetPlanModel($id: ID!) {
-    getPlanModel(id: $id) {
+export const getPlan = /* GraphQL */ `
+  query GetPlan($id: ID!) {
+    getPlan(id: $id) {
       id
-      type
-      MobileMinutes
-      MobileRate
-      LandlineMinutes
-      LandlineRate
-      IntMinutes
-      IntRate
-      PremMinutes
-      PremRate
-      CostPerMonth
+      planType
+      mobileMinutes
+      mobileRate
+      landlineMinutes
+      landlineRate
+      internationalMinutes
+      internationalRate
+      premiumMinutes
+      premiumRate
+      costPerMonth
       _version
       _deleted
       _lastChangedAt
@@ -238,14 +238,14 @@ export const getPlanModel = /* GraphQL */ `
     }
   }
 `;
-export const syncPlanModels = /* GraphQL */ `
-  query SyncPlanModels(
-    $filter: ModelPlanModelFilterInput
+export const syncPlans = /* GraphQL */ `
+  query SyncPlans(
+    $filter: ModelPlanFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncPlanModels(
+    syncPlans(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -253,16 +253,16 @@ export const syncPlanModels = /* GraphQL */ `
     ) {
       items {
         id
-        type
-        MobileMinutes
-        MobileRate
-        LandlineMinutes
-        LandlineRate
-        IntMinutes
-        IntRate
-        PremMinutes
-        PremRate
-        CostPerMonth
+        planType
+        mobileMinutes
+        mobileRate
+        landlineMinutes
+        landlineRate
+        internationalMinutes
+        internationalRate
+        premiumMinutes
+        premiumRate
+        costPerMonth
         _version
         _deleted
         _lastChangedAt

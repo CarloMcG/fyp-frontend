@@ -1,15 +1,15 @@
-type UserModel @model @auth(rules: [{allow: public}]) @key(name: "byPlanModel", fields: ["planmodelID"]) {
+type User @model @key(name: "byPlan", fields: ["planmodelID"]) @auth(rules: [{allow: public}]) {
   id: ID!
   Name: String!
   PhoneNum: Int!
   AccountType: String!
   Plan: ID!
-  UserModelPlanModels: PlanModel @connection
-  CallModels: [CallModel] @connection(keyName: "byUserModel", fields: ["id"])
-  planmodelID: ID!
+  UserModelPlanModels: Plan @connection
+  CallModels: [Call] @connection(keyName: "byUser", fields: ["id"])
+  planmodelID: ID
 }
 
-type CallModel @model @auth(rules: [{allow: public}]) @key(name: "byUserModel", fields: ["usermodelID"]) @key(name: "byPlanModel", fields: ["planmodelID"]) {
+type Call @model @key(name: "byUser", fields: ["usermodelID"]) @key(name: "byPlan", fields: ["planmodelID"]) @auth(rules: [{allow: public}]) {
   id: ID!
   NumCalling: Int!
   NumCalled: Int!
@@ -17,23 +17,23 @@ type CallModel @model @auth(rules: [{allow: public}]) @key(name: "byUserModel", 
   EndTime: AWSDateTime!
   CallType: String!
   Cost: Float!
-  usermodelID: ID!
-  planmodelID: ID!
+  usermodelID: ID
+  planmodelID: ID
 }
 
-type PlanModel @model @auth(rules: [{allow: public}]) {
+type Plan @model @auth(rules: [{allow: public}]) {
   id: ID!
-  type: Boolean!
-  MobileMinutes: Int!
-  MobileRate: Float!
-  LandlineMinutes: Int!
-  LandlineRate: Float!
-  IntMinutes: Int!
-  IntRate: Float!
-  PremMinutes: Int!
-  PremRate: Float!
-  CostPerMonth: Int!
-  UserModels: [UserModel] @connection(keyName: "byPlanModel", fields: ["id"])
-  CallModels: [CallModel] @connection(keyName: "byPlanModel", fields: ["id"])
+  planType: String!
+  mobileMinutes: Int!
+  mobileRate: Float!
+  landlineMinutes: Int!
+  landlineRate: Float!
+  internationalMinutes: Int!
+  internationalRate: Float!
+  premiumMinutes: Int!
+  premiumRate: Float!
+  UserModels: [User] @connection(keyName: "byPlan", fields: ["id"])
+  CallModels: [Call] @connection(keyName: "byPlan", fields: ["id"])
+  costPerMonth: Float!
 }
  
