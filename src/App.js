@@ -3,12 +3,10 @@ import { Route } from "react-router-dom";
 import "./theme.scss";
 
 import Login from "./Login";
-import AdminLogin from "./AdminLogin";
 import CustomerDashboard from "./CustomerDashboard";
 import AdminDashboard from "./AdminDashboard";
 import Bills from "./Bills";
-import BpCalls from "./BpCalls";
-import PpCalls from "./PpCalls";
+import Calls from "./Calls";
 import PayBill from "./PayBill";
 import Transactions from "./Transactions";
 import TopUp from "./TopUp";
@@ -17,6 +15,7 @@ import NewPlan from "./NewPlan";
 import AddToPlan from "./AddToPlan";
 import PrePayDashboard from "./PrePayDashboard";
 import Users from "./Users";
+import Api from "./APISandbox";
 
 import Amplify, { Auth } from "aws-amplify";
 import awsconfig from "./aws-exports";
@@ -27,12 +26,10 @@ function App() {
   return (
     <div className="App">
       <Route exact path="/" component={Login} />
-      <Route exact path="/Admin" component={AdminLogin} />
       <Route exact path="/CustomerDashboard" component={CustomerDashboard} />
       <Route exact path="/AdminDashboard" component={AdminDashboard} />
       <Route exact path="/Bills" component={Bills} />
-      <Route exact path="/BpCalls" component={BpCalls} />
-      <Route exact path="/PpCalls" component={PpCalls} />
+      <Route exact path="/Calls" component={Calls} />
       <Route exact path="/PayBill" component={PayBill} />
       <Route exact path="/Transactions" component={Transactions} />
       <Route exact path="/TopUp" component={TopUp} />
@@ -41,6 +38,7 @@ function App() {
       <Route exact path="/AddToPlan" component={AddToPlan} />
       <Route exact path="/PrePayDashBoard" component={PrePayDashboard} />
       <Route exact path="/Users" component={Users} />
+      <Route exact path="/Api" component={Api} />
     </div>
   );
 }

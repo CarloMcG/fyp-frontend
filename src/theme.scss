@@ -98,6 +98,15 @@ body{
     color: white;
 }
 
+.cForm{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+
 :root {
     --themeColor: #03DAC5;
     --hoverColor: #03DAC5;

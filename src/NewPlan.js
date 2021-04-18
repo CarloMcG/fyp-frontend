@@ -1,10 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Amplify, { API, graphqlOperation } from "aws-amplify";
+import { createPlan } from "./graphql/mutations";
+import { listPlans } from "./graphql/queries";
 import Container from "react-bootstrap/Container";
-
 import { Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
-function newplan() {
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
+
+const initialState = {
+  id: "",
+  planType: "",
+  mobileMinutes: "",
+  mobileRate: "",
+  landlineMinutes: "",
+  landlineRate: "",
+  internationalMinutes: "",
+  internationalRate: "",
+  premiumMinutes: "",
+  premiumRate: "",
+  costPerMonth: "",
+};
+
+const NewPlan = () => {
+  const [formState, setFromState] = useState(initialState);
+  const [plans, setPlans] = useState([]);
+
+  useEffect(() => {
+    fetchPlans();
+  }, []);
+
+  function setInput(key, value) {
+    setFromState({ ...formState, [key]: value });
+  }
+
+  async function fetchPlans() {
+    try {
+      const planData = await API.graphql(graphqlOperation(listPlans));
+      const plans = planData.data.listPlans.items;
+      setPlans(plans);
+    } catch (error) {
+      console.log("error fetching plans");
+    }
+  }
+
+  async function addPlan() {
+    try {
+      if (!formState.id || !formState.planType) return;
+      const plan = { ...formState };
+      setPlans([...plans, plan]);
+      setFromState(initialState);
+      await API.graphql(graphqlOperation(createPlan, { input: plan }));
+    } catch (error) {
+      console.log("error creating plan:", error);
+    }
+  }
   return (
     <Container fluid>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -46,121 +97,111 @@ function newplan() {
           <AmplifySignOut />
         </div>
       </nav>
+      <div class="cForm">
+        <Form>
+          <input
+            type="text"
+            onChange={(event) => setInput("id", event.target.value)}
+            value={formState.id}
+            placeholder="Plan ID"
+            class="form-control form-fixer"
+          ></input>
 
-      <Col class="row justify-content-center">
-        <div class="jumbotron vertical-center row justify-content-center">
-          <Form class="form-inline text-center">
-            <div class="form-inline form-group">
-              <label class="fLabel">Plan ID</label>
-              <input
-                type="text"
-                id="pID"
-                class="form-control form-fixer m-1"
-              ></input>
-            </div>
-            <div class="form-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              ></input>
-              <label class="form-check-label" for="flexRadioDefault1">
-                BillPay
-              </label>
+          <select
+            class="form-control form-fixer"
+            onChange={(event) => setInput("planType", event.target.value)}
+            value={formState.planType}
+          >
+            <option value="NULL">Plan Type </option>
+            <option value="Billpay">Billpay</option>
+            <option value="Prepay">Prepay</option>
+          </select>
 
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              ></input>
-              <label class="form-check-label" for="flexRadioDefault1">
-                PrePay
-              </label>
-            </div>
-            <div class="form-inline">
-              <label class="fLabel">Mobile Minutes</label>
-              <input
-                type="number"
-                id="mm"
-                class="form-control form-fixer m-1 p-1"
-              ></input>
-            </div>{" "}
-            <div class="form-inline">
-              <label class="fLabel">Mobile Rate</label>
-              <input
-                type="number"
-                id="mr"
-                class="form-control form-fixer m-1 p-1"
-              ></input>
-            </div>{" "}
-            <div class="form-inline">
-              <label class="fLabel">Landline Minutes</label>
-              <input
-                type="number"
-                id="lm"
-                class="form-control form-fixer m-1 p-1"
-              ></input>
-            </div>{" "}
-            <div class="form-inline">
-              <label class="fLabel">Landline Rate</label>
-              <input
-                type="number"
-                id="lr"
-                class="form-control form-fixer m-1 p-1"
-              ></input>
-            </div>{" "}
-            <div class="form-inline">
-              <label class="fLabel">International Minutes</label>
-              <input
-                type="number"
-                id="im"
-                class="form-control form-fixer m-1 p-1"
-              ></input>
-            </div>{" "}
-            <div class="form-inline">
-              <label class="fLabel">International Rate</label>
-              <input
-                type="number"
-                id="ir"
-                class="form-control form-fixer m-1 p-1"
-              ></input>
-            </div>{" "}
-            <div class="form-inline">
-              <label class="fLabel">Premium Minutes</label>
-              <input
-                type="number"
-                id="pm"
-                class="form-control form-fixer m-1 p-1"
-              ></input>
-            </div>
-            <div class="form-inline">
-              <label class="fLabel">Premium Rate</label>
-              <input
-                type="number"
-                id="pRate"
-                class="form-control form-fixer m-1 p-1"
-              ></input>
-            </div>
-            <h6 class="fLabel">Cost Per Month: €</h6>
-            <div class="row justify-content-center">
-              <div class="btn-group float-right">
-                <a
-                  href="/plans"
-                  class="btn btn-primary btn-lg active"
-                  role="button"
-                  aria-pressed="true"
-                >
-                  Save Plan
-                </a>
-              </div>
-            </div>
-          </Form>
-        </div>
-      </Col>
+          <input
+            type="number"
+            onChange={(event) => setInput("mobileMinutes", event.target.value)}
+            value={formState.mobileMinutes}
+            placeholder="Mobile Minuts"
+            class="form-control form-fixer"
+          ></input>
+
+          <input
+            type="number"
+            onChange={(event) => setInput("mobileRate", event.target.value)}
+            value={formState.mobileRate}
+            placeholder="Mobile Rate"
+            class="form-control form-fixer"
+          ></input>
+
+          <input
+            type="number"
+            onChange={(event) =>
+              setInput("landlineMinutes", event.target.value)
+            }
+            value={formState.landlineMinutes}
+            placeholder="Landline Minutes"
+            class="form-control form-fixer"
+          ></input>
+
+          <input
+            type="number"
+            onChange={(event) => setInput("landlineRate", event.target.value)}
+            value={formState.landlineRate}
+            placeholder="Landline Rate"
+            class="form-control form-fixer"
+          ></input>
+
+          <input
+            type="number"
+            onChange={(event) =>
+              setInput("internationalMinutes", event.target.value)
+            }
+            value={formState.internationalMinutes}
+            placeholder="International Minutes"
+            class="form-control form-fixer"
+          ></input>
+
+          <input
+            type="number"
+            onChange={(event) =>
+              setInput("internationalRate", event.target.value)
+            }
+            value={formState.internationalRate}
+            placeholder="International Rate"
+            class="form-control form-fixer"
+          ></input>
+
+          <input
+            type="number"
+            onChange={(event) => setInput("premiumMinutes", event.target.value)}
+            value={formState.premiumMinutes}
+            placeholder="Premium Minutes"
+            class="form-control form-fixer"
+          ></input>
+
+          <input
+            type="number"
+            onChange={(event) => setInput("premiumRate", event.target.value)}
+            value={formState.premiumRate}
+            placeholder="Premium Rate"
+            class="form-control form-fixer"
+          ></input>
+
+          <input
+            type="number"
+            onChange={(event) => setInput("costPerMonth", event.target.value)}
+            value={formState.costPerMonth}
+            placeholder="Cost Per Month"
+            class="form-control form-fixer"
+          ></input>
+
+          <button onClick={addPlan} class="btn btn-primary btn-lg active">
+            Save Plan
+          </button>
+        </Form>
+      </div>
     </Container>
   );
-}
+};
 
-export default newplan;
+export default NewPlan;

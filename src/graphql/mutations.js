@@ -218,14 +218,6 @@ export const createPlan = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      UserModels {
-        nextToken
-        startedAt
-      }
-      CallModels {
-        nextToken
-        startedAt
-      }
     }
   }
 `;

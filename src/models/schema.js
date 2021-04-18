@@ -64,13 +64,6 @@ export const schema = {
                         "connectionType": "HAS_MANY",
                         "associatedWith": "usermodelID"
                     }
-                },
-                "planmodelID": {
-                    "name": "planmodelID",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
                 }
             },
             "syncable": true,
@@ -79,15 +72,6 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byPlan",
-                        "fields": [
-                            "planmodelID"
-                        ]
-                    }
                 },
                 {
                     "type": "auth",
@@ -180,34 +164,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "UserModels": {
-                    "name": "UserModels",
-                    "isArray": true,
-                    "type": {
-                        "model": "User"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "planmodelID"
-                    }
-                },
-                "CallModels": {
-                    "name": "CallModels",
-                    "isArray": true,
-                    "type": {
-                        "model": "Call"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "planmodelID"
-                    }
-                },
                 "costPerMonth": {
                     "name": "costPerMonth",
                     "isArray": false,
@@ -299,13 +255,6 @@ export const schema = {
                     "type": "ID",
                     "isRequired": false,
                     "attributes": []
-                },
-                "planmodelID": {
-                    "name": "planmodelID",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
                 }
             },
             "syncable": true,
@@ -321,15 +270,6 @@ export const schema = {
                         "name": "byUser",
                         "fields": [
                             "usermodelID"
-                        ]
-                    }
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byPlan",
-                        "fields": [
-                            "planmodelID"
                         ]
                     }
                 },
@@ -354,5 +294,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "7d93fe4a4487295284259619f0e742ee"
+    "version": "b4bf0dabf67b19c03efa47da53eda3a7"
 };

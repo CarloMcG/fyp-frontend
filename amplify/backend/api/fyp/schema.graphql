@@ -1,4 +1,4 @@
-type User @model @key(name: "byPlan", fields: ["planmodelID"]) @auth(rules: [{allow: public}]) {
+type User @model @auth(rules: [{ allow: public }]) {
   id: ID!
   Name: String!
   PhoneNum: Int!
@@ -6,10 +6,12 @@ type User @model @key(name: "byPlan", fields: ["planmodelID"]) @auth(rules: [{al
   Plan: ID!
   UserModelPlanModels: Plan @connection
   CallModels: [Call] @connection(keyName: "byUser", fields: ["id"])
-  planmodelID: ID
 }
 
-type Call @model @key(name: "byUser", fields: ["usermodelID"]) @key(name: "byPlan", fields: ["planmodelID"]) @auth(rules: [{allow: public}]) {
+type Call
+  @model
+  @key(name: "byUser", fields: ["usermodelID"])
+  @auth(rules: [{ allow: public }]) {
   id: ID!
   NumCalling: Int!
   NumCalled: Int!
@@ -18,10 +20,9 @@ type Call @model @key(name: "byUser", fields: ["usermodelID"]) @key(name: "byPla
   CallType: String!
   Cost: Float!
   usermodelID: ID
-  planmodelID: ID
 }
 
-type Plan @model @auth(rules: [{allow: public}]) {
+type Plan @model @auth(rules: [{ allow: public }]) {
   id: ID!
   planType: String!
   mobileMinutes: Int!
@@ -32,8 +33,5 @@ type Plan @model @auth(rules: [{allow: public}]) {
   internationalRate: Float!
   premiumMinutes: Int!
   premiumRate: Float!
-  UserModels: [User] @connection(keyName: "byPlan", fields: ["id"])
-  CallModels: [Call] @connection(keyName: "byPlan", fields: ["id"])
   costPerMonth: Float!
 }
- 

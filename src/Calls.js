@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import Amplify, { API, graphqlOperation } from "aws-amplify";
+import { listCalls, listUsers } from "./graphql/queries";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
 
-function PpCalls() {
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
+const Calls = () => {
+  const [calls, setCalls] = useState([]);
+
+  useEffect(() => {
+    fetchCalls();
+  }, []);
+
+  async function fetchCalls() {
+    try {
+      const callData = await API.graphql(graphqlOperation(listCalls));
+      const calls = callData.data.listCalls.items;
+      setCalls(calls);
+    } catch (error) {
+      console.log("Error fetching Calls");
+    }
+  }
   return (
     <Container fluid>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,24 +44,24 @@ function PpCalls() {
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-              <a class="nav-link" href="/PrePayDashboard">
-                Dashboard<span class="sr-only">(current)</span>
+            <li class="nav-item">
+              <a class="nav-link" href="/CustomerDashboard">
+                Dashboard
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/PpCalls">
-                Calls
+              <a class="nav-link active" href="/Bills">
+                Calls<span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/Transactions">
-                Transactions
+              <a class="nav-link" href="/Bills">
+                Bills<span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/TopUp">
-                TopUp
+              <a class="nav-link" href="/PayBill">
+                Pay a bill
               </a>
             </li>
           </ul>
@@ -57,6 +76,7 @@ function PpCalls() {
             <table class="table table-bordered">
               <thead>
                 <tr>
+                  <th scope="col">Call ID</th>
                   <th scope="col">Number Calling</th>
                   <th scope="col">Number Called</th>
                   <th scope="col">Start Time</th>
@@ -65,13 +85,25 @@ function PpCalls() {
                   <th scope="col">Cost</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              {calls.map((call, index) => (
+                <tbody>
+                  <tr ley={call.id ? call.id : index}>
+                    <td colSpan="1">{call.id}</td>
+                    <td colSpan="1">{call.NumCalling}</td>
+                    <td colSpan="1">{call.NumCalled}</td>
+                    <td colSpan="1">{call.StartTime}</td>
+                    <td colSpan="1">{call.EndTime}</td>
+                    <td colSpan="1">{call.CallType}</td>
+                    <td colSpan="1">{call.Cost}</td>
+                  </tr>
+                </tbody>
+              ))}
             </table>
           </Row>
         </div>
       </Col>
     </Container>
   );
-}
+};
 
-export default PpCalls;
+export default Calls;

@@ -53,12 +53,6 @@ export const listUsers = /* GraphQL */ `
         PhoneNum
         AccountType
         Plan
-        planmodelID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
       nextToken
       startedAt
@@ -131,13 +125,6 @@ export const listCalls = /* GraphQL */ `
         EndTime
         CallType
         Cost
-        usermodelID
-        planmodelID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
       nextToken
       startedAt
@@ -197,14 +184,7 @@ export const listPlans = /* GraphQL */ `
         premiumMinutes
         premiumRate
         costPerMonth
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
-      nextToken
-      startedAt
     }
   }
 `;

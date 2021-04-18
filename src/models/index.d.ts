@@ -12,7 +12,6 @@ export declare class User {
   readonly Plan: string;
   readonly UserModelPlanModels?: Plan;
   readonly CallModels?: (Call | null)[];
-  readonly planmodelID?: string;
   constructor(init: ModelInit<User>);
   static copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
 }
@@ -28,8 +27,6 @@ export declare class Plan {
   readonly internationalRate: number;
   readonly premiumMinutes: number;
   readonly premiumRate: number;
-  readonly UserModels?: (User | null)[];
-  readonly CallModels?: (Call | null)[];
   readonly costPerMonth: number;
   constructor(init: ModelInit<Plan>);
   static copyOf(source: Plan, mutator: (draft: MutableModel<Plan>) => MutableModel<Plan> | void): Plan;
@@ -44,7 +41,6 @@ export declare class Call {
   readonly CallType: string;
   readonly Cost: number;
   readonly usermodelID?: string;
-  readonly planmodelID?: string;
   constructor(init: ModelInit<Call>);
   static copyOf(source: Call, mutator: (draft: MutableModel<Call>) => MutableModel<Call> | void): Call;
 }
