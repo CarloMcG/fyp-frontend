@@ -3,53 +3,11 @@ import Container from "react-bootstrap/Container";
 import { Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
+import PpNav from "./PpNav";
 function topup() {
   return (
     <Container fluid>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/CustomerDashboard">
-          TelecomsCorp
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-              <a class="nav-link" href="/PrePayDashboard">
-                Dashboard<span class="sr-only">(current)</span>
-              </a>
-            </li>{" "}
-            <li class="nav-item">
-              <a class="nav-link " href="/PpCalls">
-                Calls
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="/Transactions">
-                Transactions
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/TopUp">
-                TopUp
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class=" float-right">
-          <AmplifySignOut />
-        </div>
-      </nav>
+      <PpNav />
       <Col class="row justify-content-center">
         <div class="jumbotron vertical-center row justify-content-center">
           <Form class="form-inline text-center">

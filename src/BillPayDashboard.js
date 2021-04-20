@@ -1,57 +1,15 @@
-import React from "react";
-import { AmplifySignOut } from "@aws-amplify/ui-react";
-
+import React, { useEffect, useState } from "react";
+import API from "@aws-amplify/api";
+import Auth from "@aws-amplify/auth";
 import Container from "react-bootstrap/Container";
 import { Circle } from "rc-progress";
+import BpNav from "./BpNav";
 
-function cDashboard() {
+function BpDashboard() {
   return (
     <Container fluid>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/CustomerDashboard">
-          TelecomsCorp
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <BpNav />
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/CustomerDashboard">
-                Dashboard<span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/BpCalls">
-                Calls
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Bills">
-                Bills
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/PayBill">
-                Pay a bill
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class=" float-right">
-          <AmplifySignOut />
-        </div>
-      </nav>
-      <h1>Hello, $User</h1>
       <div class="row justify-content-center">
         <div class="jumbotron vertical-center row justify-content-center">
           <div class="card-group ">
@@ -117,4 +75,4 @@ function cDashboard() {
   );
 }
 
-export default cDashboard;
+export default BpDashboard;

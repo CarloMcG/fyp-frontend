@@ -213,11 +213,6 @@ export const createPlan = /* GraphQL */ `
       premiumMinutes
       premiumRate
       costPerMonth
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;

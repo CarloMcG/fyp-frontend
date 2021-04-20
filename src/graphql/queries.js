@@ -54,8 +54,6 @@ export const listUsers = /* GraphQL */ `
         AccountType
         Plan
       }
-      nextToken
-      startedAt
     }
   }
 `;

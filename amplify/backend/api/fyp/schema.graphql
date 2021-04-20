@@ -1,37 +1,32 @@
-type User @model @auth(rules: [{ allow: public }]) {
+type User @model @auth(rules: [{allow: private}]) {
   id: ID!
-  Name: String!
-  PhoneNum: Int!
-  AccountType: String!
-  Plan: ID!
-  UserModelPlanModels: Plan @connection
-  CallModels: [Call] @connection(keyName: "byUser", fields: ["id"])
+  Name: String
+  PhoneNum: String
+  AccountType: String
+  Plan: ID
 }
 
-type Call
-  @model
-  @key(name: "byUser", fields: ["usermodelID"])
-  @auth(rules: [{ allow: public }]) {
+type Call @model @auth(rules: [{allow: private}]) {
   id: ID!
-  NumCalling: Int!
-  NumCalled: Int!
-  StartTime: AWSTime!
-  EndTime: AWSDateTime!
-  CallType: String!
-  Cost: Float!
-  usermodelID: ID
+  NumCalling: String
+  NumCalled: String
+  StartTime: AWSTime
+  EndTime: AWSTime
+  CallType: String
+  Cost: Float
 }
 
-type Plan @model @auth(rules: [{ allow: public }]) {
+type Plan @model @auth(rules: [{allow: private}]) {
   id: ID!
-  planType: String!
-  mobileMinutes: Int!
-  mobileRate: Float!
-  landlineMinutes: Int!
-  landlineRate: Float!
-  internationalMinutes: Int!
-  internationalRate: Float!
-  premiumMinutes: Int!
-  premiumRate: Float!
-  costPerMonth: Float!
+  planType: String
+  mobileMinutes: Int
+  mobileRate: Float
+  landlineMinutes: Int
+  landlineRate: Float
+  internationalMinutes: Int
+  internationalRate: Float
+  premiumMinutes: Int
+  premiumRate: Float
+  costPerMonth: Float
 }
+ 

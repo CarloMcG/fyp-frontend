@@ -1,48 +1,11 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
+import AdminNav from "./AdminNav";
 function aDashboard() {
   return (
     <Container fluid>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/CustomerDashboard">
-          TelecomsCorp
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="/AdminDashboard">
-                Dashboard
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Users">
-                Users<span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="/Plans">
-                Plans<span class="sr-only">(current)</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class=" float-right">
-          <AmplifySignOut />
-        </div>
-      </nav>
+      <AdminNav />
       <div class="row justify-content-center">
         <div class="jumbotron vertical-center row justify-content-center">
           <div class="card-group ">
