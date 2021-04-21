@@ -13,8 +13,11 @@ import {
 } from "@stripe/react-stripe-js";
 import BpNav from "./BpNav";
 
-const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
+import CheckoutForm from "./CheckoutForm";
 
+const promise = loadStripe(
+  "pk_test_51IbMlrGRleJE8Th4SKn0HD8NCsGgf9sSuXFytfKvyOwTmsZDbiFdI4qKy5qIZ2seGND9ViIRz40DKF2jRe7s8zR600wDxb6CdM"
+);
 function PayBill() {
   return (
     <Container fluid>
@@ -30,57 +33,10 @@ function PayBill() {
           <h2>Amount: €</h2>
         </div>
       </div>
-      <div class="jumbotron vertical-center row justify-content-center">
-        <Row>
-          <form>
-            <label class="row justify-content-center">
-              <h1>Pay a Bill</h1>
-            </label>
-            <Form.Group controlId="cardNumber">
-              <Form.Control
-                type="text"
-                placeholder="Card Number"
-                class="row justify-content-center"
-              />
-            </Form.Group>
-            <Form.Group controlId="cardHolder">
-              <Form.Control
-                type="text"
-                placeholder="Card Holder"
-                class="row justify-content-center"
-              />
-            </Form.Group>
-            <Form.Group controlId="expDate">
-              <Form.Control
-                type="month"
-                placeholder="Exp Date"
-                class="row justify-content-center"
-              />
-            </Form.Group>
-            <Form.Group controlId="cvv">
-              <Form.Control
-                type="text"
-                placeholder="cvv"
-                class="row justify-content-center"
-              />
-            </Form.Group>
-            <div class="row justify-content-center">
-              <div class="btn-group float-right">
-                <a
-                  href="/CustomerDashboard"
-                  class="btn btn-primary btn-lg active"
-                  role="button"
-                  aria-pressed="true"
-                >
-                  Pay With Stripe
-                </a>
-                <Elements stripe={stripePromise}>
-                  <CardElement />
-                </Elements>
-              </div>
-            </div>
-          </form>
-        </Row>
+      <div class="jumbotron  justify-content-center">
+        <Elements stripe={promise}>
+          <CheckoutForm />
+        </Elements>
       </div>
     </Container>
   );
