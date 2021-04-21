@@ -1,70 +1,58 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getUser = /* GraphQL */ `
-  query GetUser($id: ID!) {
-    getUser(id: $id) {
+export const getBill = /* GraphQL */ `
+  query GetBill($id: ID!) {
+    getBill(id: $id) {
       id
-      Name
-      PhoneNum
-      AccountType
-      Plan
-      planmodelID
+      StartDate
+      EndDate
+      Amount
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      CallModels {
+      owner
+      BillCalls {
         nextToken
         startedAt
       }
-      UserModelPlanModels {
+    }
+  }
+`;
+export const listBills = /* GraphQL */ `
+  query ListBills(
+    $filter: ModelBillFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listBills(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
         id
-        planType
-        mobileMinutes
-        mobileRate
-        landlineMinutes
-        landlineRate
-        internationalMinutes
-        internationalRate
-        premiumMinutes
-        premiumRate
-        costPerMonth
+        StartDate
+        EndDate
+        Amount
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
+      nextToken
+      startedAt
     }
   }
 `;
-export const listUsers = /* GraphQL */ `
-  query ListUsers(
-    $filter: ModelUserFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        Name
-        PhoneNum
-        AccountType
-        Plan
-      }
-    }
-  }
-`;
-export const syncUsers = /* GraphQL */ `
-  query SyncUsers(
-    $filter: ModelUserFilterInput
+export const syncBills = /* GraphQL */ `
+  query SyncBills(
+    $filter: ModelBillFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncUsers(
+    syncBills(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -72,16 +60,15 @@ export const syncUsers = /* GraphQL */ `
     ) {
       items {
         id
-        Name
-        PhoneNum
-        AccountType
-        Plan
-        planmodelID
+        StartDate
+        EndDate
+        Amount
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -98,13 +85,13 @@ export const getCall = /* GraphQL */ `
       EndTime
       CallType
       Cost
-      usermodelID
-      planmodelID
+      billID
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -123,6 +110,13 @@ export const listCalls = /* GraphQL */ `
         EndTime
         CallType
         Cost
+        billID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -150,16 +144,38 @@ export const syncCalls = /* GraphQL */ `
         EndTime
         CallType
         Cost
-        usermodelID
-        planmodelID
+        billID
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
+    }
+  }
+`;
+export const getPlan = /* GraphQL */ `
+  query GetPlan($id: ID!) {
+    getPlan(id: $id) {
+      id
+      planType
+      mobileMinutes
+      mobileRate
+      landlineMinutes
+      landlineRate
+      internationalMinutes
+      internationalRate
+      premiumMinutes
+      premiumRate
+      costPerMonth
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -183,36 +199,8 @@ export const listPlans = /* GraphQL */ `
         premiumRate
         costPerMonth
       }
-    }
-  }
-`;
-export const getPlan = /* GraphQL */ `
-  query GetPlan($id: ID!) {
-    getPlan(id: $id) {
-      id
-      planType
-      mobileMinutes
-      mobileRate
-      landlineMinutes
-      landlineRate
-      internationalMinutes
-      internationalRate
-      premiumMinutes
-      premiumRate
-      costPerMonth
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      UserModels {
-        nextToken
-        startedAt
-      }
-      CallModels {
-        nextToken
-        startedAt
-      }
+      nextToken
+      startedAt
     }
   }
 `;

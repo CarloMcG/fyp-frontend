@@ -3,8 +3,7 @@ import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
-import { listCalls, listUsers } from "./graphql/queries";
-import { AmplifySignOut } from "@aws-amplify/ui-react";
+import { listCalls } from "./graphql/queries";
 import BpNav from "./BpNav";
 
 import awsExports from "./aws-exports";
@@ -45,7 +44,7 @@ const BpCalls = () => {
               </thead>
               {calls.map((call, index) => (
                 <tbody>
-                  <tr ley={call.id ? call.id : index}>
+                  <tr key={call.id ? call.id : index}>
                     <td colSpan="1">{call.id}</td>
                     <td colSpan="1">{call.NumCalling}</td>
                     <td colSpan="1">{call.NumCalled}</td>

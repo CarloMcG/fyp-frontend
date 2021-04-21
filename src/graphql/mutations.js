@@ -1,128 +1,71 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createUser = /* GraphQL */ `
-  mutation CreateUser(
-    $input: CreateUserInput!
-    $condition: ModelUserConditionInput
+export const createBill = /* GraphQL */ `
+  mutation CreateBill(
+    $input: CreateBillInput!
+    $condition: ModelBillConditionInput
   ) {
-    createUser(input: $input, condition: $condition) {
+    createBill(input: $input, condition: $condition) {
       id
-      Name
-      PhoneNum
-      AccountType
-      Plan
-      planmodelID
+      StartDate
+      EndDate
+      Amount
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      CallModels {
+      owner
+      BillCalls {
         nextToken
         startedAt
-      }
-      UserModelPlanModels {
-        id
-        planType
-        mobileMinutes
-        mobileRate
-        landlineMinutes
-        landlineRate
-        internationalMinutes
-        internationalRate
-        premiumMinutes
-        premiumRate
-        costPerMonth
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
     }
   }
 `;
-export const updateUser = /* GraphQL */ `
-  mutation UpdateUser(
-    $input: UpdateUserInput!
-    $condition: ModelUserConditionInput
+export const updateBill = /* GraphQL */ `
+  mutation UpdateBill(
+    $input: UpdateBillInput!
+    $condition: ModelBillConditionInput
   ) {
-    updateUser(input: $input, condition: $condition) {
+    updateBill(input: $input, condition: $condition) {
       id
-      Name
-      PhoneNum
-      AccountType
-      Plan
-      planmodelID
+      StartDate
+      EndDate
+      Amount
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      CallModels {
+      owner
+      BillCalls {
         nextToken
         startedAt
-      }
-      UserModelPlanModels {
-        id
-        planType
-        mobileMinutes
-        mobileRate
-        landlineMinutes
-        landlineRate
-        internationalMinutes
-        internationalRate
-        premiumMinutes
-        premiumRate
-        costPerMonth
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
     }
   }
 `;
-export const deleteUser = /* GraphQL */ `
-  mutation DeleteUser(
-    $input: DeleteUserInput!
-    $condition: ModelUserConditionInput
+export const deleteBill = /* GraphQL */ `
+  mutation DeleteBill(
+    $input: DeleteBillInput!
+    $condition: ModelBillConditionInput
   ) {
-    deleteUser(input: $input, condition: $condition) {
+    deleteBill(input: $input, condition: $condition) {
       id
-      Name
-      PhoneNum
-      AccountType
-      Plan
-      planmodelID
+      StartDate
+      EndDate
+      Amount
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      CallModels {
+      owner
+      BillCalls {
         nextToken
         startedAt
-      }
-      UserModelPlanModels {
-        id
-        planType
-        mobileMinutes
-        mobileRate
-        landlineMinutes
-        landlineRate
-        internationalMinutes
-        internationalRate
-        premiumMinutes
-        premiumRate
-        costPerMonth
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
     }
   }
@@ -140,13 +83,13 @@ export const createCall = /* GraphQL */ `
       EndTime
       CallType
       Cost
-      usermodelID
-      planmodelID
+      billID
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -163,13 +106,13 @@ export const updateCall = /* GraphQL */ `
       EndTime
       CallType
       Cost
-      usermodelID
-      planmodelID
+      billID
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -186,13 +129,13 @@ export const deleteCall = /* GraphQL */ `
       EndTime
       CallType
       Cost
-      usermodelID
-      planmodelID
+      billID
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -213,6 +156,11 @@ export const createPlan = /* GraphQL */ `
       premiumMinutes
       premiumRate
       costPerMonth
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -238,14 +186,6 @@ export const updatePlan = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      UserModels {
-        nextToken
-        startedAt
-      }
-      CallModels {
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -271,14 +211,6 @@ export const deletePlan = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      UserModels {
-        nextToken
-        startedAt
-      }
-      CallModels {
-        nextToken
-        startedAt
-      }
     }
   }
 `;

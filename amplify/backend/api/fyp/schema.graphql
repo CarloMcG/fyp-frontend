@@ -1,19 +1,20 @@
-type User @model @auth(rules: [{allow: private}]) {
+type Bill @model @auth(rules: [{allow: owner}]) {
   id: ID!
-  Name: String
-  PhoneNum: String
-  AccountType: String
-  Plan: ID
+  StartDate: AWSDate
+  EndDate: AWSDate
+  BillCalls: [Call] @connection(keyName: "byBill", fields: ["id"])
+  Amount: Float
 }
 
-type Call @model @auth(rules: [{allow: private}]) {
+type Call @model @auth(rules: [{allow: owner}]) @key(name: "byBill", fields: ["billID"]) {
   id: ID!
   NumCalling: String
   NumCalled: String
-  StartTime: AWSTime
-  EndTime: AWSTime
+  StartTime: AWSDateTime
+  EndTime: AWSDateTime
   CallType: String
   Cost: Float
+  billID: ID
 }
 
 type Plan @model @auth(rules: [{allow: private}]) {

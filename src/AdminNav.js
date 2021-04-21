@@ -54,11 +54,7 @@ const AdminNav = () => {
               Dashboard
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Users">
-              Users<span class="sr-only">(current)</span>
-            </a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link " href="/Plans">
               Plans<span class="sr-only">(current)</span>

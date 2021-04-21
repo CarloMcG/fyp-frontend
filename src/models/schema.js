@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "User": {
-            "name": "User",
+        "Bill": {
+            "name": "Bill",
             "fields": {
                 "id": {
                     "name": "id",
@@ -10,37 +10,44 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "Name": {
-                    "name": "Name",
+                "StartDate": {
+                    "name": "StartDate",
                     "isArray": false,
-                    "type": "String",
+                    "type": "AWSDate",
                     "isRequired": false,
                     "attributes": []
                 },
-                "PhoneNum": {
-                    "name": "PhoneNum",
+                "EndDate": {
+                    "name": "EndDate",
                     "isArray": false,
-                    "type": "String",
+                    "type": "AWSDate",
                     "isRequired": false,
                     "attributes": []
                 },
-                "AccountType": {
-                    "name": "AccountType",
-                    "isArray": false,
-                    "type": "String",
+                "BillCalls": {
+                    "name": "BillCalls",
+                    "isArray": true,
+                    "type": {
+                        "model": "Call"
+                    },
                     "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "billID"
+                    }
                 },
-                "Plan": {
-                    "name": "Plan",
+                "Amount": {
+                    "name": "Amount",
                     "isArray": false,
-                    "type": "ID",
+                    "type": "Float",
                     "isRequired": false,
                     "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "Users",
+            "pluralName": "Bills",
             "attributes": [
                 {
                     "type": "model",
@@ -51,7 +58,10 @@ export const schema = {
                     "properties": {
                         "rules": [
                             {
-                                "allow": "private",
+                                "provider": "userPools",
+                                "ownerField": "owner",
+                                "allow": "owner",
+                                "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
@@ -91,14 +101,14 @@ export const schema = {
                 "StartTime": {
                     "name": "StartTime",
                     "isArray": false,
-                    "type": "AWSTime",
+                    "type": "AWSDateTime",
                     "isRequired": false,
                     "attributes": []
                 },
                 "EndTime": {
                     "name": "EndTime",
                     "isArray": false,
-                    "type": "AWSTime",
+                    "type": "AWSDateTime",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -115,6 +125,13 @@ export const schema = {
                     "type": "Float",
                     "isRequired": false,
                     "attributes": []
+                },
+                "billID": {
+                    "name": "billID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -125,11 +142,23 @@ export const schema = {
                     "properties": {}
                 },
                 {
+                    "type": "key",
+                    "properties": {
+                        "name": "byBill",
+                        "fields": [
+                            "billID"
+                        ]
+                    }
+                },
+                {
                     "type": "auth",
                     "properties": {
                         "rules": [
                             {
-                                "allow": "private",
+                                "provider": "userPools",
+                                "ownerField": "owner",
+                                "allow": "owner",
+                                "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
@@ -251,5 +280,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "6948f5f7b040af8bcfa3ca7e029fe7ff"
+    "version": "b28306281fe6b082aca2508618dd6002"
 };

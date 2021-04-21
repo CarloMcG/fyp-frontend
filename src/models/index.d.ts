@@ -4,14 +4,14 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-export declare class User {
+export declare class Bill {
   readonly id: string;
-  readonly Name?: string;
-  readonly PhoneNum?: string;
-  readonly AccountType?: string;
-  readonly Plan?: string;
-  constructor(init: ModelInit<User>);
-  static copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
+  readonly StartDate?: string;
+  readonly EndDate?: string;
+  readonly BillCalls?: (Call | null)[];
+  readonly Amount?: number;
+  constructor(init: ModelInit<Bill>);
+  static copyOf(source: Bill, mutator: (draft: MutableModel<Bill>) => MutableModel<Bill> | void): Bill;
 }
 
 export declare class Call {
@@ -22,6 +22,7 @@ export declare class Call {
   readonly EndTime?: string;
   readonly CallType?: string;
   readonly Cost?: number;
+  readonly billID?: string;
   constructor(init: ModelInit<Call>);
   static copyOf(source: Call, mutator: (draft: MutableModel<Call>) => MutableModel<Call> | void): Call;
 }

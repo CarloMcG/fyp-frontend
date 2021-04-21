@@ -1,126 +1,69 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateUser = /* GraphQL */ `
-  subscription OnCreateUser {
-    onCreateUser {
+export const onCreateBill = /* GraphQL */ `
+  subscription OnCreateBill($owner: String) {
+    onCreateBill(owner: $owner) {
       id
-      Name
-      PhoneNum
-      AccountType
-      Plan
-      planmodelID
+      StartDate
+      EndDate
+      Amount
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      CallModels {
+      owner
+      BillCalls {
         nextToken
         startedAt
-      }
-      UserModelPlanModels {
-        id
-        planType
-        mobileMinutes
-        mobileRate
-        landlineMinutes
-        landlineRate
-        internationalMinutes
-        internationalRate
-        premiumMinutes
-        premiumRate
-        costPerMonth
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
     }
   }
 `;
-export const onUpdateUser = /* GraphQL */ `
-  subscription OnUpdateUser {
-    onUpdateUser {
+export const onUpdateBill = /* GraphQL */ `
+  subscription OnUpdateBill($owner: String) {
+    onUpdateBill(owner: $owner) {
       id
-      Name
-      PhoneNum
-      AccountType
-      Plan
-      planmodelID
+      StartDate
+      EndDate
+      Amount
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      CallModels {
+      owner
+      BillCalls {
         nextToken
         startedAt
-      }
-      UserModelPlanModels {
-        id
-        planType
-        mobileMinutes
-        mobileRate
-        landlineMinutes
-        landlineRate
-        internationalMinutes
-        internationalRate
-        premiumMinutes
-        premiumRate
-        costPerMonth
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
     }
   }
 `;
-export const onDeleteUser = /* GraphQL */ `
-  subscription OnDeleteUser {
-    onDeleteUser {
+export const onDeleteBill = /* GraphQL */ `
+  subscription OnDeleteBill($owner: String) {
+    onDeleteBill(owner: $owner) {
       id
-      Name
-      PhoneNum
-      AccountType
-      Plan
-      planmodelID
+      StartDate
+      EndDate
+      Amount
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-      CallModels {
+      owner
+      BillCalls {
         nextToken
         startedAt
-      }
-      UserModelPlanModels {
-        id
-        planType
-        mobileMinutes
-        mobileRate
-        landlineMinutes
-        landlineRate
-        internationalMinutes
-        internationalRate
-        premiumMinutes
-        premiumRate
-        costPerMonth
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
     }
   }
 `;
 export const onCreateCall = /* GraphQL */ `
-  subscription OnCreateCall {
-    onCreateCall {
+  subscription OnCreateCall($owner: String) {
+    onCreateCall(owner: $owner) {
       id
       NumCalling
       NumCalled
@@ -128,19 +71,19 @@ export const onCreateCall = /* GraphQL */ `
       EndTime
       CallType
       Cost
-      usermodelID
-      planmodelID
+      billID
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateCall = /* GraphQL */ `
-  subscription OnUpdateCall {
-    onUpdateCall {
+  subscription OnUpdateCall($owner: String) {
+    onUpdateCall(owner: $owner) {
       id
       NumCalling
       NumCalled
@@ -148,19 +91,19 @@ export const onUpdateCall = /* GraphQL */ `
       EndTime
       CallType
       Cost
-      usermodelID
-      planmodelID
+      billID
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteCall = /* GraphQL */ `
-  subscription OnDeleteCall {
-    onDeleteCall {
+  subscription OnDeleteCall($owner: String) {
+    onDeleteCall(owner: $owner) {
       id
       NumCalling
       NumCalled
@@ -168,13 +111,13 @@ export const onDeleteCall = /* GraphQL */ `
       EndTime
       CallType
       Cost
-      usermodelID
-      planmodelID
+      billID
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -197,14 +140,6 @@ export const onCreatePlan = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      UserModels {
-        nextToken
-        startedAt
-      }
-      CallModels {
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -227,14 +162,6 @@ export const onUpdatePlan = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      UserModels {
-        nextToken
-        startedAt
-      }
-      CallModels {
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -257,14 +184,6 @@ export const onDeletePlan = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      UserModels {
-        nextToken
-        startedAt
-      }
-      CallModels {
-        nextToken
-        startedAt
-      }
     }
   }
 `;

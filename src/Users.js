@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
-import { listUsers } from "./graphql/queries";
+
 import { AmplifySignOut } from "@aws-amplify/ui-react";
 import AdminNav from "./AdminNav";
 
@@ -11,6 +11,7 @@ import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
 
 const Users = () => {
+  /*
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -26,6 +27,7 @@ const Users = () => {
       console.log("Error fetching users");
     }
   }
+  */
   return (
     <Container fluid>
       <AdminNav />
@@ -43,17 +45,6 @@ const Users = () => {
                   <th scope="col">Plan ID</th>
                 </tr>
               </thead>
-              {users.map((user, index) => (
-                <tbody>
-                  <tr key={user.id ? user.id : index}>
-                    <td colSpan="1">{user.id}</td>
-                    <td colSpan="1">{user.Name}</td>
-                    <td colSpan="1">{user.PhoneNum}</td>
-                    <td colSpan="1">{user.AccountType}</td>
-                    <td colSpan="1">{user.Plan}</td>
-                  </tr>
-                </tbody>
-              ))}
             </table>
           </Row>
         </div>
