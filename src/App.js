@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import "./theme.scss";
 
@@ -23,7 +23,10 @@ import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    document.title = "Telecoms Corp";
+  }, []);
   return (
     <div className="App">
       <Route exact path="/" component={Login} />
@@ -43,5 +46,5 @@ function App() {
       <Route exact path="/Api" component={Api} />
     </div>
   );
-}
+};
 export default App;
