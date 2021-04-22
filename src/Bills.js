@@ -37,6 +37,7 @@ const Bills = () => {
                   <th scope="col">Start Date</th>
                   <th scope="col">End Date</th>
                   <th scope="col">Amount</th>
+                  <th scope="col">Download</th>
                 </tr>
               </thead>
               {bills.map((bill, index) => (
@@ -45,6 +46,11 @@ const Bills = () => {
                     <td colSpan="1">{bill.StartDate}</td>
                     <td colSpan="1">{bill.EndDate}</td>
                     <td colSpan="1">{bill.Amount}</td>
+                    <td colSpan="1">
+                      <button class="btn btn-primary btn-lg active">
+                        Download
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               ))}

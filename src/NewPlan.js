@@ -85,7 +85,7 @@ const NewPlan = () => {
             type="number"
             onChange={(event) => setInput("mobileMinutes", event.target.value)}
             value={formState.mobileMinutes}
-            placeholder="Mobile Minuts"
+            placeholder="Mobile Minutws"
             class="form-control form-fixer"
           ></input>
 
