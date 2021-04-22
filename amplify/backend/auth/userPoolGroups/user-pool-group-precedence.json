@@ -1,0 +1,14 @@
+[
+  {
+    "groupName": "admin",
+    "precedence": 1
+  },
+  {
+    "groupName": "billpay",
+    "precedence": 2
+  },
+  {
+    "groupName": "prepay",
+    "precedence": 3
+  }
+]

@@ -30,4 +30,3 @@ type Plan @model @auth(rules: [{allow: private}]) {
   premiumRate: Float
   costPerMonth: Float
 }
- 

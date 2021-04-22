@@ -8,7 +8,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authfyp"
+              "userPoolId": "authfyp896dedbe896dedbe"
             }
           },
           "additionalAuthenticationProviders": [
@@ -21,7 +21,22 @@
     }
   },
   "auth": {
-    "fyp": {
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "fyp896dedbe896dedbe",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID"
+          ]
+        }
+      ]
+    },
+    "fyp896dedbe896dedbe": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
