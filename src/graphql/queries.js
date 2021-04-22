@@ -198,11 +198,6 @@ export const listPlans = /* GraphQL */ `
         premiumMinutes
         premiumRate
         costPerMonth
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
       nextToken
       startedAt
