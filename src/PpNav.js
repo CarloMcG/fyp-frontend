@@ -72,11 +72,6 @@ const PpNav = () => {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Transactions">
-              Transactions
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/TopUp">
               TopUp
             </a>
