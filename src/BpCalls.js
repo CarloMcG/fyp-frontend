@@ -34,7 +34,7 @@ const BpCalls = () => {
               <thead>
                 <tr>
                   <th scope="col">Call ID</th>
-                  <th scope="col">Number Calling</th>
+
                   <th scope="col">Number Called</th>
                   <th scope="col">Start Time</th>
                   <th scope="col">End Time</th>
@@ -46,7 +46,7 @@ const BpCalls = () => {
                 <tbody>
                   <tr key={call.id ? call.id : index}>
                     <td colSpan="1">{call.id}</td>
-                    <td colSpan="1">{call.NumCalling}</td>
+
                     <td colSpan="1">{call.NumCalled}</td>
                     <td colSpan="1">{call.StartTime}</td>
                     <td colSpan="1">{call.EndTime}</td>
