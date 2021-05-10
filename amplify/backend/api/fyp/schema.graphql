@@ -28,6 +28,7 @@ type Plan @model @auth(rules: [{allow: private}]) {
   internationalRate: Float
   premiumMinutes: Int
   premiumRate: Float
-  Users: [String]
+  costPerMonth: Float
+  Users: AWSJSON
 }
  

@@ -41,6 +41,7 @@ const NewPlan = () => {
       const planData = await API.graphql(graphqlOperation(listPlans));
       const plans = planData.data.listPlans.items;
       setPlans(plans);
+      console.log("it worked");
     } catch (error) {
       console.log("error fetching plans");
     }

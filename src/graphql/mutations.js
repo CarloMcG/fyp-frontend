@@ -152,6 +152,7 @@ export const createPlan = /* GraphQL */ `
       internationalRate
       premiumMinutes
       premiumRate
+      costPerMonth
       Users
       _version
       _deleted
@@ -177,6 +178,7 @@ export const updatePlan = /* GraphQL */ `
       internationalRate
       premiumMinutes
       premiumRate
+      costPerMonth
       Users
       _version
       _deleted
@@ -202,6 +204,7 @@ export const deletePlan = /* GraphQL */ `
       internationalRate
       premiumMinutes
       premiumRate
+      costPerMonth
       Users
       _version
       _deleted

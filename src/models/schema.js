@@ -241,13 +241,19 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "costPerMonth": {
+                    "name": "costPerMonth",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "Users": {
                     "name": "Users",
-                    "isArray": true,
-                    "type": "String",
+                    "isArray": false,
+                    "type": "AWSJSON",
                     "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -278,5 +284,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "7b693facf79755275d5ea9e9d272b1b8"
+    "version": "f6d3fd5869b60eac909b19b8f216a6e5"
 };

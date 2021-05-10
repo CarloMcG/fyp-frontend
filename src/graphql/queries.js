@@ -167,6 +167,7 @@ export const getPlan = /* GraphQL */ `
       internationalRate
       premiumMinutes
       premiumRate
+      costPerMonth
       Users
       _version
       _deleted
@@ -194,6 +195,7 @@ export const listPlans = /* GraphQL */ `
         internationalRate
         premiumMinutes
         premiumRate
+        costPerMonth
         Users
         _version
         _deleted
@@ -230,6 +232,7 @@ export const syncPlans = /* GraphQL */ `
         internationalRate
         premiumMinutes
         premiumRate
+        costPerMonth
         Users
         _version
         _deleted
