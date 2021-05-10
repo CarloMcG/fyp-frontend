@@ -16,9 +16,8 @@ import NewPlan from "./NewPlan";
 import AddToPlan from "./AddToPlan";
 import PpDashboard from "./PrePayDashboard";
 import Users from "./Users";
-import Api from "./APISandbox";
 
-import Amplify, { Auth } from "aws-amplify";
+import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
@@ -43,7 +42,6 @@ const App = () => {
       <Route exact path="/AddToPlan" component={AddToPlan} />
       <Route exact path="/PrePayDashBoard" component={PpDashboard} />
       <Route exact path="/Users" component={Users} />
-      <Route exact path="/Api" component={Api} />
     </div>
   );
 };

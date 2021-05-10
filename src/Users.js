@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import Amplify, { API, graphqlOperation } from "aws-amplify";
+import Amplify from "aws-amplify";
 
-import { AmplifySignOut } from "@aws-amplify/ui-react";
 import AdminNav from "./AdminNav";
 
 import awsExports from "./aws-exports";

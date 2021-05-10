@@ -58,10 +58,7 @@ export const schema = {
                     "properties": {
                         "rules": [
                             {
-                                "provider": "userPools",
-                                "ownerField": "owner",
-                                "allow": "owner",
-                                "identityClaim": "cognito:username",
+                                "allow": "private",
                                 "operations": [
                                     "create",
                                     "update",
@@ -244,12 +241,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "costPerMonth": {
-                    "name": "costPerMonth",
-                    "isArray": false,
-                    "type": "Float",
+                "Users": {
+                    "name": "Users",
+                    "isArray": true,
+                    "type": "String",
                     "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isArrayNullable": true
                 }
             },
             "syncable": true,
@@ -280,5 +278,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "b28306281fe6b082aca2508618dd6002"
+    "version": "7b693facf79755275d5ea9e9d272b1b8"
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import { AmplifySignOut } from "@aws-amplify/ui-react";
+
 import AdminNav from "./AdminNav";
 function aDashboard() {
   return (

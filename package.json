@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@aws-amplify/ui-react": "^1.0.6",
+    "@aws-sdk/client-cognito-identity-provider": "^3.14.0",
     "@stripe/react-stripe-js": "^1.4.0",
     "@stripe/stripe-js": "^1.13.2",
     "@testing-library/jest-dom": "^5.11.10",

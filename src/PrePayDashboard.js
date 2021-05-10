@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { Circle } from "rc-progress";
-import { AmplifySignOut } from "@aws-amplify/ui-react";
 import PpNav from "./PpNav";
 function PpDashboard() {
   return (

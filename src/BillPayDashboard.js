@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import API from "@aws-amplify/api";
-import Auth from "@aws-amplify/auth";
+import React from "react";
+
 import Container from "react-bootstrap/Container";
 import { Circle } from "rc-progress";
 import BpNav from "./BpNav";

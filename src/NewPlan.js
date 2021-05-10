@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Amplify, { API, Auth, graphqlOperation } from "aws-amplify";
+import Amplify, { API, graphqlOperation } from "aws-amplify";
 import { createPlan } from "./graphql/mutations";
 import { listPlans } from "./graphql/queries";
 import Container from "react-bootstrap/Container";
-import { Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import { AmplifySignOut } from "@aws-amplify/ui-react";
+
 import awsExports from "./aws-exports";
 import AdminNav from "./AdminNav";
+
 Amplify.configure(awsExports);
 
 const initialState = {
@@ -41,7 +41,6 @@ const NewPlan = () => {
       const planData = await API.graphql(graphqlOperation(listPlans));
       const plans = planData.data.listPlans.items;
       setPlans(plans);
-      const user = await Auth.currentAuthenticatedUser();
     } catch (error) {
       console.log("error fetching plans");
     }
@@ -58,6 +57,7 @@ const NewPlan = () => {
       console.log("error creating plan:", error);
     }
   }
+
   return (
     <Container fluid>
       <AdminNav />
@@ -65,6 +65,7 @@ const NewPlan = () => {
         <Form>
           <input
             type="text"
+            name="id"
             onChange={(event) => setInput("id", event.target.value)}
             value={formState.id}
             placeholder="Plan ID"

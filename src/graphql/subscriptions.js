@@ -2,8 +2,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateBill = /* GraphQL */ `
-  subscription OnCreateBill($owner: String) {
-    onCreateBill(owner: $owner) {
+  subscription OnCreateBill {
+    onCreateBill {
       id
       StartDate
       EndDate
@@ -13,7 +13,6 @@ export const onCreateBill = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      owner
       BillCalls {
         nextToken
         startedAt
@@ -22,8 +21,8 @@ export const onCreateBill = /* GraphQL */ `
   }
 `;
 export const onUpdateBill = /* GraphQL */ `
-  subscription OnUpdateBill($owner: String) {
-    onUpdateBill(owner: $owner) {
+  subscription OnUpdateBill {
+    onUpdateBill {
       id
       StartDate
       EndDate
@@ -33,7 +32,6 @@ export const onUpdateBill = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      owner
       BillCalls {
         nextToken
         startedAt
@@ -42,8 +40,8 @@ export const onUpdateBill = /* GraphQL */ `
   }
 `;
 export const onDeleteBill = /* GraphQL */ `
-  subscription OnDeleteBill($owner: String) {
-    onDeleteBill(owner: $owner) {
+  subscription OnDeleteBill {
+    onDeleteBill {
       id
       StartDate
       EndDate
@@ -53,7 +51,6 @@ export const onDeleteBill = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      owner
       BillCalls {
         nextToken
         startedAt
@@ -134,7 +131,7 @@ export const onCreatePlan = /* GraphQL */ `
       internationalRate
       premiumMinutes
       premiumRate
-      costPerMonth
+      Users
       _version
       _deleted
       _lastChangedAt
@@ -156,7 +153,7 @@ export const onUpdatePlan = /* GraphQL */ `
       internationalRate
       premiumMinutes
       premiumRate
-      costPerMonth
+      Users
       _version
       _deleted
       _lastChangedAt
@@ -178,7 +175,7 @@ export const onDeletePlan = /* GraphQL */ `
       internationalRate
       premiumMinutes
       premiumRate
-      costPerMonth
+      Users
       _version
       _deleted
       _lastChangedAt

@@ -1,4 +1,4 @@
-type Bill @model @auth(rules: [{ allow: private }]) {
+type Bill @model @auth(rules: [{allow: private}]) {
   id: ID!
   StartDate: AWSDate
   EndDate: AWSDate
@@ -6,10 +6,7 @@ type Bill @model @auth(rules: [{ allow: private }]) {
   Amount: Float
 }
 
-type Call
-  @model
-  @auth(rules: [{ allow: owner }])
-  @key(name: "byBill", fields: ["billID"]) {
+type Call @model @auth(rules: [{allow: owner}]) @key(name: "byBill", fields: ["billID"]) {
   id: ID!
   NumCalling: String
   NumCalled: String
@@ -20,7 +17,7 @@ type Call
   billID: ID
 }
 
-type Plan @model @auth(rules: [{ allow: private }]) {
+type Plan @model @auth(rules: [{allow: private}]) {
   id: ID!
   planType: String
   mobileMinutes: Int
@@ -31,5 +28,6 @@ type Plan @model @auth(rules: [{ allow: private }]) {
   internationalRate: Float
   premiumMinutes: Int
   premiumRate: Float
-  costPerMonth: Float
+  Users: [String]
 }
+ 

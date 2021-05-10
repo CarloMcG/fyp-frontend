@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
-import Auth from "@aws-amplify/auth";
 import { Hub } from "aws-amplify";
 import { useHistory } from "react-router-dom";
 
@@ -9,7 +8,7 @@ const BpNav = () => {
 
   useEffect(() => {
     setAuthListener();
-  }, []);
+  });
 
   async function setAuthListener() {
     Hub.listen("auth", (data) => {

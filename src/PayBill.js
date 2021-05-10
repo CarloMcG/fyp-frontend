@@ -1,15 +1,7 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
-import { Row } from "react-bootstrap";
-import { AmplifySignOut } from "@aws-amplify/ui-react";
 import { loadStripe } from "@stripe/stripe-js";
-import {
-  CardElement,
-  Elements,
-  useStripe,
-  useElements,
-} from "@stripe/react-stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 import BpNav from "./BpNav";
 
 import CheckoutForm from "./CheckoutForm";

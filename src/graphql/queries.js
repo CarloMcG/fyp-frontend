@@ -13,7 +13,6 @@ export const getBill = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      owner
       BillCalls {
         nextToken
         startedAt
@@ -38,7 +37,6 @@ export const listBills = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -68,7 +66,6 @@ export const syncBills = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -170,7 +167,7 @@ export const getPlan = /* GraphQL */ `
       internationalRate
       premiumMinutes
       premiumRate
-      costPerMonth
+      Users
       _version
       _deleted
       _lastChangedAt
@@ -197,7 +194,12 @@ export const listPlans = /* GraphQL */ `
         internationalRate
         premiumMinutes
         premiumRate
-        costPerMonth
+        Users
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
       }
       nextToken
       startedAt
@@ -228,7 +230,7 @@ export const syncPlans = /* GraphQL */ `
         internationalRate
         premiumMinutes
         premiumRate
-        costPerMonth
+        Users
         _version
         _deleted
         _lastChangedAt

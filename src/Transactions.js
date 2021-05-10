@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import { AmplifySignOut } from "@aws-amplify/ui-react";
+
 import PpNav from "./PpNav";
 function transactions() {
   return (

@@ -8,7 +8,7 @@ import {
   AmplifySignUp,
   AmplifySignIn,
 } from "@aws-amplify/ui-react";
-import API from "@aws-amplify/api";
+
 import Auth from "@aws-amplify/auth";
 import { Hub } from "aws-amplify";
 import { useHistory } from "react-router-dom";

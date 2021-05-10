@@ -3,8 +3,7 @@ import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
-import { listCalls, listUsers } from "./graphql/queries";
-import { AmplifySignOut } from "@aws-amplify/ui-react";
+import { listCalls } from "./graphql/queries";
 import PpNav from "./PpNav";
 
 import awsExports from "./aws-exports";

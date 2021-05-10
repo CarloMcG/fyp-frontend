@@ -4,7 +4,6 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
 import { listPlans } from "./graphql/queries";
-import { AmplifySignOut } from "@aws-amplify/ui-react";
 import AdminNav from "./AdminNav";
 
 import awsExports from "./aws-exports";

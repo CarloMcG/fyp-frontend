@@ -5,13 +5,7 @@ import Form from "react-bootstrap/Form";
 
 import PpNav from "./PpNav";
 import { loadStripe } from "@stripe/stripe-js";
-import {
-  CardElement,
-  Elements,
-  useStripe,
-  useElements,
-} from "@stripe/react-stripe-js";
-import BpNav from "./BpNav";
+import { Elements } from "@stripe/react-stripe-js";
 
 import CheckoutForm from "./CheckoutForm";
 
