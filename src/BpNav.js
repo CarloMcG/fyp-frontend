@@ -1,14 +1,21 @@
 import React, { useEffect } from "react";
+import Amplify, { API, graphqlOperation } from "aws-amplify";
+import { listPlans } from "./graphql/queries";
+import awsExports from "./aws-exports";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
 import { Hub } from "aws-amplify";
 import { useHistory } from "react-router-dom";
+import Auth from "@aws-amplify/auth";
+
+Amplify.configure(awsExports);
 
 const BpNav = () => {
   let history = useHistory();
 
   useEffect(() => {
     setAuthListener();
-  });
+    fetchPlans();
+  }, []);
 
   async function setAuthListener() {
     Hub.listen("auth", (data) => {
@@ -41,6 +48,23 @@ const BpNav = () => {
     });
   }
 
+  async function fetchPlans() {
+    try {
+      const user = await Auth.currentAuthenticatedUser();
+      const name = user.signInUserSession.accessToken.payload["username"];
+      let filter = {
+        Users: {
+          contains: name,
+        },
+      };
+      const planData = await API.graphql(
+        graphqlOperation(listPlans, { filter: filter })
+      );
+      console.log(planData);
+    } catch (error) {
+      console.log("error fetching plans");
+    }
+  }
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="/CustomerDashboard">

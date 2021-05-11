@@ -4,7 +4,6 @@ import { createPlan } from "./graphql/mutations";
 import { listPlans } from "./graphql/queries";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-
 import awsExports from "./aws-exports";
 import AdminNav from "./AdminNav";
 
