@@ -169,11 +169,6 @@ export const getPlan = /* GraphQL */ `
       premiumRate
       costPerMonth
       Users
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -197,14 +192,7 @@ export const listPlans = /* GraphQL */ `
         premiumRate
         costPerMonth
         Users
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
-      nextToken
-      startedAt
     }
   }
 `;
@@ -234,11 +222,6 @@ export const syncPlans = /* GraphQL */ `
         premiumRate
         costPerMonth
         Users
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
       }
       nextToken
       startedAt

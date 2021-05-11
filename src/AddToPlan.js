@@ -1,52 +1,81 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Amplify, { API, graphqlOperation } from "aws-amplify";
+import { updatePlan } from "./graphql/mutations";
+import { listPlans } from "./graphql/queries";
 import Container from "react-bootstrap/Container";
 import { Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 
+import awsExports from "./aws-exports";
 import AdminNav from "./AdminNav";
-function AddToPlan() {
+
+Amplify.configure(awsExports);
+
+const initialState = {
+  id: "",
+  Users: "",
+};
+
+const AddToPlan = () => {
+  const [formState, setFormState] = useState(initialState);
+  const [plans, setPlans] = useState([]);
+
+  useEffect(() => {
+    fetchPlans();
+  }, []);
+
+  function setInput(key, value) {
+    setFormState({ ...formState, [key]: value });
+  }
+
+  async function fetchPlans() {
+    try {
+      const planData = await API.graphql(graphqlOperation(listPlans));
+      const plans = planData.data.listPlans.items;
+    } catch (error) {
+      console.log("error fetching plans");
+    }
+  }
+  async function addUser() {
+    try {
+      if (!formState.Users || !formState.id) return;
+      const plan = { ...formState };
+      setPlans([...plans, plan]);
+      setFormState(initialState);
+      await API.graphql(graphqlOperation(updatePlan, { input: plan }));
+      console.log("User Added Successfully");
+    } catch (error) {
+      console.log("Error adding user to plan", error);
+    }
+  }
   return (
     <Container fluid>
       <AdminNav />
-      <Col class="row justify-content-center">
-        <div class="jumbotron vertical-center row justify-content-center">
-          <Form class="form-inline text-center">
-            <div class="form-inline form-group">
-              <label class="fLabel">User</label>
-              <input
-                type="text"
-                id="uID"
-                placeholder="User ID"
-                class="form-control form-fixer m-1"
-              ></input>
-            </div>
-            <div class="form-inline form-group">
-              <label class="fLabel">Plan</label>
-              <input
-                type="text"
-                id="uID"
-                placeholder="Plan ID"
-                class="form-control form-fixer m-1"
-              ></input>
-            </div>
+      <div class="cForm">
+        <Form>
+          <input
+            type="text"
+            onChange={(event) => setInput("Users", event.target.value)}
+            value={formState.Users}
+            placeholder="User ID"
+            class="form-control form-fixer"
+          ></input>
 
-            <div class="row justify-content-center">
-              <div class="btn-group float-right">
-                <a
-                  href="/plans"
-                  class="btn btn-primary btn-lg active"
-                  role="button"
-                  aria-pressed="true"
-                >
-                  Save Changes
-                </a>
-              </div>
-            </div>
-          </Form>
-        </div>
-      </Col>
+          <input
+            type="text"
+            onChange={(event) => setInput("id", event.target.value)}
+            value={formState.id}
+            placeholder="Plan ID"
+            class="form-control form-fixer"
+          ></input>
+
+          <button onClick={addUser} class="btn btn-primary btn-lg active">
+            Add User To Plan
+          </button>
+        </Form>
+      </div>
     </Container>
   );
-}
+};
 
 export default AddToPlan;

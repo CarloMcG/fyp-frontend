@@ -39,7 +39,7 @@ export declare class Plan {
   readonly premiumMinutes?: number;
   readonly premiumRate?: number;
   readonly costPerMonth?: number;
-  readonly Users?: string;
+  readonly Users?: (string | null)[];
   constructor(init: ModelInit<Plan>);
   static copyOf(source: Plan, mutator: (draft: MutableModel<Plan>) => MutableModel<Plan> | void): Plan;
 }

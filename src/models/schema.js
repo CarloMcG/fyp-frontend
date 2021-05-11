@@ -250,10 +250,11 @@ export const schema = {
                 },
                 "Users": {
                     "name": "Users",
-                    "isArray": false,
-                    "type": "AWSJSON",
+                    "isArray": true,
+                    "type": "String",
                     "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isArrayNullable": true
                 }
             },
             "syncable": true,
@@ -284,5 +285,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "f6d3fd5869b60eac909b19b8f216a6e5"
+    "version": "231ac7a9928720ed59ab9a4984d320bd"
 };

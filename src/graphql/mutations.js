@@ -180,11 +180,6 @@ export const updatePlan = /* GraphQL */ `
       premiumRate
       costPerMonth
       Users
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;

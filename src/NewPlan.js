@@ -25,7 +25,7 @@ const initialState = {
 };
 
 const NewPlan = () => {
-  const [formState, setFromState] = useState(initialState);
+  const [formState, setFormState] = useState(initialState);
   const [plans, setPlans] = useState([]);
 
   useEffect(() => {
@@ -33,15 +33,13 @@ const NewPlan = () => {
   }, []);
 
   function setInput(key, value) {
-    setFromState({ ...formState, [key]: value });
+    setFormState({ ...formState, [key]: value });
   }
 
   async function fetchPlans() {
     try {
       const planData = await API.graphql(graphqlOperation(listPlans));
       const plans = planData.data.listPlans.items;
-      setPlans(plans);
-      console.log("it worked");
     } catch (error) {
       console.log("error fetching plans");
     }
@@ -52,7 +50,7 @@ const NewPlan = () => {
       if (!formState.id || !formState.planType) return;
       const plan = { ...formState };
       setPlans([...plans, plan]);
-      setFromState(initialState);
+      setFormState(initialState);
       await API.graphql(graphqlOperation(createPlan, { input: plan }));
     } catch (error) {
       console.log("error creating plan:", error);
