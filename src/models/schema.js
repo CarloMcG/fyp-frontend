@@ -129,6 +129,20 @@ export const schema = {
                     "type": "ID",
                     "isRequired": false,
                     "attributes": []
+                },
+                "startTimeStamp": {
+                    "name": "startTimeStamp",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "endTimeStamp": {
+                    "name": "endTimeStamp",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -285,5 +299,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "231ac7a9928720ed59ab9a4984d320bd"
+    "version": "5e8450be601d282d13abe63b7c5aca30"
 };

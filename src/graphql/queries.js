@@ -83,6 +83,8 @@ export const getCall = /* GraphQL */ `
       CallType
       Cost
       billID
+      startTimeStamp
+      endTimeStamp
       _version
       _deleted
       _lastChangedAt
@@ -108,6 +110,8 @@ export const listCalls = /* GraphQL */ `
         CallType
         Cost
         billID
+        startTimeStamp
+        endTimeStamp
         _version
         _deleted
         _lastChangedAt
@@ -142,6 +146,8 @@ export const syncCalls = /* GraphQL */ `
         CallType
         Cost
         billID
+        startTimeStamp
+        endTimeStamp
         _version
         _deleted
         _lastChangedAt
@@ -169,6 +175,11 @@ export const getPlan = /* GraphQL */ `
       premiumRate
       costPerMonth
       Users
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -192,7 +203,14 @@ export const listPlans = /* GraphQL */ `
         premiumRate
         costPerMonth
         Users
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
       }
+      nextToken
+      startedAt
     }
   }
 `;
@@ -222,6 +240,11 @@ export const syncPlans = /* GraphQL */ `
         premiumRate
         costPerMonth
         Users
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
       }
       nextToken
       startedAt

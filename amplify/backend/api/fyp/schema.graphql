@@ -15,6 +15,8 @@ type Call @model @auth(rules: [{allow: owner}]) @key(name: "byBill", fields: ["b
   CallType: String
   Cost: Float
   billID: ID
+  startTimeStamp: Int
+  endTimeStamp: Int
 }
 
 type Plan @model @auth(rules: [{allow: private}]) {

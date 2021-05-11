@@ -23,6 +23,8 @@ export declare class Call {
   readonly CallType?: string;
   readonly Cost?: number;
   readonly billID?: string;
+  readonly startTimeStamp?: number;
+  readonly endTimeStamp?: number;
   constructor(init: ModelInit<Call>);
   static copyOf(source: Call, mutator: (draft: MutableModel<Call>) => MutableModel<Call> | void): Call;
 }

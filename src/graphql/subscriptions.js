@@ -69,6 +69,8 @@ export const onCreateCall = /* GraphQL */ `
       CallType
       Cost
       billID
+      startTimeStamp
+      endTimeStamp
       _version
       _deleted
       _lastChangedAt
@@ -89,6 +91,8 @@ export const onUpdateCall = /* GraphQL */ `
       CallType
       Cost
       billID
+      startTimeStamp
+      endTimeStamp
       _version
       _deleted
       _lastChangedAt
@@ -109,6 +113,8 @@ export const onDeleteCall = /* GraphQL */ `
       CallType
       Cost
       billID
+      startTimeStamp
+      endTimeStamp
       _version
       _deleted
       _lastChangedAt

@@ -81,6 +81,8 @@ export const createCall = /* GraphQL */ `
       CallType
       Cost
       billID
+      startTimeStamp
+      endTimeStamp
       _version
       _deleted
       _lastChangedAt
@@ -104,6 +106,8 @@ export const updateCall = /* GraphQL */ `
       CallType
       Cost
       billID
+      startTimeStamp
+      endTimeStamp
       _version
       _deleted
       _lastChangedAt
@@ -127,6 +131,8 @@ export const deleteCall = /* GraphQL */ `
       CallType
       Cost
       billID
+      startTimeStamp
+      endTimeStamp
       _version
       _deleted
       _lastChangedAt
@@ -180,6 +186,11 @@ export const updatePlan = /* GraphQL */ `
       premiumRate
       costPerMonth
       Users
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
     }
   }
 `;
