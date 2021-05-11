@@ -64,10 +64,14 @@ function PayBill() {
           <h2>Amount: €{planDetails.costPerMonth}</h2>
         </div>
       </div>
-      <div class="jumbotron  justify-content-center">
-        <Elements stripe={promise}>
-          <CheckoutForm />
-        </Elements>
+      <div>
+        <div class="card-body">
+          <div>
+            <Elements stripe={promise}>
+              <CheckoutForm />
+            </Elements>
+          </div>
+        </div>
       </div>
     </Container>
   );

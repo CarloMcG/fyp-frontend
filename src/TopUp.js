@@ -136,17 +136,24 @@ const Topup = () => {
             <button
               type="button"
               onClick={addTotal}
-              class="btn btn-primary btn-lg active"
+              class="btn btn-primary btn-lg  float-right"
             >
               Add Total
             </button>
-            <h3> Total Cost:{total[0]} </h3>
           </Form>
         </div>
+
         <div>
-          <Elements stripe={promise}>
-            <CheckoutForm />
-          </Elements>
+          <h3 class="card-header">Total Cost: €{total[0]}</h3>
+          <h1></h1>
+          <h1></h1>
+          <div class="card-body">
+            <div>
+              <Elements stripe={promise}>
+                <CheckoutForm />
+              </Elements>
+            </div>
+          </div>
         </div>
       </Col>
     </Container>

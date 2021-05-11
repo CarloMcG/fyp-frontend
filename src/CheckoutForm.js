@@ -80,7 +80,11 @@ export default function CheckoutForm() {
         options={cardStyle}
         onChange={handleChange}
       />
-      <button disabled={processing || disabled || succeeded} id="submit">
+      <button
+        disabled={processing || disabled || succeeded}
+        id="submit"
+        class="btn btn-primary btn-lg active float-right"
+      >
         <span id="button-text">
           {processing ? (
             <div className="spinner" id="spinner"></div>
