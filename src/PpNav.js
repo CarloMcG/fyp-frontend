@@ -68,7 +68,7 @@ const PpNav = () => {
 
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/CustomerDashboard">
+      <a class="navbar-brand" href="/PrePayDashboard">
         TelecomsCorp
       </a>
       <button

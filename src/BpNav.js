@@ -59,11 +59,7 @@ const BpNav = () => {
               Calls
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Bills">
-              Bills
-            </a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/PayBill">
               Pay a bill
