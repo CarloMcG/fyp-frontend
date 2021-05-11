@@ -103,10 +103,11 @@ const BpCalls = () => {
   return (
     <Container fluid>
       <BpNav />
+
       <Col>
         <div class="jumbotron justify-content-center">
           <Row>
-            <table class="table table-bordered">
+            <table class="table table-bordered" onLoad={calcCost()}>
               <thead>
                 <tr>
                   <th scope="col">Call ID</th>
