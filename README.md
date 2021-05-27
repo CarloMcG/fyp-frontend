@@ -15,4 +15,4 @@ Stripe was also incorporated as a payment module to allow customers to pay for c
 ### Check it out
 This application can be accessed [here](http://www.callratingsys.com)
 
-plase not that this application is still in development
+*please not that this application is still in development*
