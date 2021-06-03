@@ -1,5 +1,5 @@
 const stripe = require("stripe")(
-  "pk_test_51IbMlrGRleJE8Th4SKn0HD8NCsGgf9sSuXFytfKvyOwTmsZDbiFdI4qKy5qIZ2seGND9ViIRz40DKF2jRe7s8zR600wDxb6CdM"
+  "sk_test_51IbMlrGRleJE8Th4nas2B011qcAQsFFlGMYYjh0APgXERV294XxWLyHx1j0mx0tLxhG2nKJDHGAPN7ibdYK3UlyQ00f9SMELzo"
 );
 const express = require("express");
 const app = express();
