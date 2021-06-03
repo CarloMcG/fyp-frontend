@@ -116,7 +116,7 @@ function PayBill() {
           <div class="card text-dark  mb-3">
             <div class="card-body">
               <div class="col-sm">
-                <h2>Amount: €{planDetails.costPerMonth}</h2>
+                <h2>Total: €{planDetails.costPerMonth}</h2>
               </div>
               <button
                 onClick={handleClick}
