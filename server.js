@@ -1,31 +1,33 @@
+const stripe = require("stripe")(
+  "pk_test_51IbMlrGRleJE8Th4SKn0HD8NCsGgf9sSuXFytfKvyOwTmsZDbiFdI4qKy5qIZ2seGND9ViIRz40DKF2jRe7s8zR600wDxb6CdM"
+);
 const express = require("express");
 const app = express();
-// This is your real test secret API key.
-const stripe = require("stripe")(
-  "sk_test_51IbMlrGRleJE8Th4nas2B011qcAQsFFlGMYYjh0APgXERV294XxWLyHx1j0mx0tLxhG2nKJDHGAPN7ibdYK3UlyQ00f9SMELzo"
-);
-
 app.use(express.static("."));
-app.use(express.json());
 
-const calculateOrderAmount = (items) => {
-  // Replace this constant with a calculation of the order's amount
-  // Calculate the order total on the server to prevent
-  // people from directly manipulating the amount on the client
-  return 1400;
-};
+const YOUR_DOMAIN = "http://localhost:3000/PayBill";
 
-app.post("/create-payment-intent", async (req, res) => {
-  const { items } = req.body;
-  // Create a PaymentIntent with the order amount and currency
-  const paymentIntent = await stripe.paymentIntents.create({
-    amount: calculateOrderAmount(items),
-    currency: "usd",
+app.post("/create-checkout-session", async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ["card"],
+    line_items: [
+      {
+        price_data: {
+          currency: "usd",
+          product_data: {
+            name: "Stubborn Attachments",
+          },
+          unit_amount: 2000,
+        },
+        quantity: 1,
+      },
+    ],
+    mode: "payment",
+    success_url: `${YOUR_DOMAIN}?success=true`,
+    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
   });
 
-  res.send({
-    clientSecret: paymentIntent.client_secret,
-  });
+  res.json({ id: session.id });
 });
 
-app.listen(4242, () => console.log("Node server listening on port 4242!"));
+app.listen(4242, () => console.log("Running on port 4242"));
