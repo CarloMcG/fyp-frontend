@@ -74,7 +74,7 @@ const Bills = () => {
       const planDate = formState.Year.concat("-", formState.Month);
       let callFilter = {
         StartTime: {
-          contains: planDate,
+          startsWith: planDate,
         },
       };
       const callData = await API.graphql(
