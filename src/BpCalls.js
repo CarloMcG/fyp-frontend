@@ -64,6 +64,7 @@ const BpCalls = () => {
       const callData = await API.graphql(graphqlOperation(listCalls));
       const calls = callData.data.listCalls.items;
       setCalls(calls);
+      console.log(calls);
     } catch (error) {
       console.log("Error fetching Calls", error);
     }
@@ -75,7 +76,7 @@ const BpCalls = () => {
       const end = calls[i].endTimeStamp;
       const duration = end - start;
       const minutes = duration / 60;
-      console.log(minutes);
+
       const type = calls[i].CallType;
       if (type == "MOBILE") {
         const cost = minutes * plan.mobileRate;
@@ -98,12 +99,20 @@ const BpCalls = () => {
         console.log("Cannot determine call type");
       }
     }
-    console.log(costs);
   }
   return (
     <Container fluid>
       <BpNav />
-
+      <div class="btn-group float-right">
+        <a
+          href="/Bills"
+          class="btn btn-primary btn-lg active"
+          role="button"
+          aria-pressed="true"
+        >
+          Generate Bill
+        </a>
+      </div>
       <Col>
         <div class="jumbotron justify-content-center">
           <Row>

@@ -14,6 +14,7 @@ import NewPlan from "./NewPlan";
 import AddToPlan from "./AddToPlan";
 import PpDashboard from "./PrePayDashboard";
 import Users from "./Users";
+import Bills from "./Bills";
 
 import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
@@ -38,6 +39,7 @@ const App = () => {
       <Route exact path="/AddToPlan" component={AddToPlan} />
       <Route exact path="/PrePayDashBoard" component={PpDashboard} />
       <Route exact path="/Users" component={Users} />
+      <Route exact path="/Bills" component={Bills} />
     </div>
   );
 };

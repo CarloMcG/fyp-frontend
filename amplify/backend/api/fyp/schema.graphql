@@ -1,25 +1,29 @@
-type Bill @model @auth(rules: [{allow: private}]) {
+type Bill @model @auth(rules: [{ allow: private }]) {
   id: ID!
   StartDate: AWSDate
   EndDate: AWSDate
-  BillCalls: [Call] @connection(keyName: "byBill", fields: ["id"])
   Amount: Float
+  Calls: [Call] @connection(keyName: "byBill", fields: ["id"])
 }
 
-type Call @model @auth(rules: [{allow: owner}]) @key(name: "byBill", fields: ["billID"]) {
+type Call
+  @model
+  @auth(rules: [{ allow: owner }])
+  @aws_cognito_user_pools
+  @key(name: "byBill", fields: ["billID"]) {
   id: ID!
   NumCalling: String
   NumCalled: String
-  StartTime: AWSDateTime
-  EndTime: AWSDateTime
+  StartTime: String
+  EndTime: String
   CallType: String
   Cost: Float
-  billID: ID
   startTimeStamp: Int
   endTimeStamp: Int
+  billID: ID
 }
 
-type Plan @model @auth(rules: [{allow: private}]) {
+type Plan @model @auth(rules: [{ allow: private }]) {
   id: ID!
   planType: String
   mobileMinutes: Int
@@ -33,4 +37,3 @@ type Plan @model @auth(rules: [{allow: private}]) {
   costPerMonth: Float
   Users: [String]
 }
- 

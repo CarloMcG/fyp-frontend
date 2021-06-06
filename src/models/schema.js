@@ -24,8 +24,15 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "BillCalls": {
-                    "name": "BillCalls",
+                "Amount": {
+                    "name": "Amount",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "Calls": {
+                    "name": "Calls",
                     "isArray": true,
                     "type": {
                         "model": "Call"
@@ -37,13 +44,6 @@ export const schema = {
                         "connectionType": "HAS_MANY",
                         "associatedWith": "billID"
                     }
-                },
-                "Amount": {
-                    "name": "Amount",
-                    "isArray": false,
-                    "type": "Float",
-                    "isRequired": false,
-                    "attributes": []
                 }
             },
             "syncable": true,
@@ -98,14 +98,14 @@ export const schema = {
                 "StartTime": {
                     "name": "StartTime",
                     "isArray": false,
-                    "type": "AWSDateTime",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
                 "EndTime": {
                     "name": "EndTime",
                     "isArray": false,
-                    "type": "AWSDateTime",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -123,13 +123,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "billID": {
-                    "name": "billID",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "startTimeStamp": {
                     "name": "startTimeStamp",
                     "isArray": false,
@@ -141,6 +134,13 @@ export const schema = {
                     "name": "endTimeStamp",
                     "isArray": false,
                     "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "billID": {
+                    "name": "billID",
+                    "isArray": false,
+                    "type": "ID",
                     "isRequired": false,
                     "attributes": []
                 }
@@ -299,5 +299,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "5e8450be601d282d13abe63b7c5aca30"
+    "version": "9332d6e3baf2739c78fb9db15d8331d4"
 };
