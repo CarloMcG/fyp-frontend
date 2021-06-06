@@ -137,14 +137,17 @@ const BpCalls = () => {
       } else if (type == "LANDLINE") {
         const cost = minutes * plan.landlineRate;
         const roundedCost = cost.toFixed(2);
+
         costs[i] = roundedCost;
       } else if (type == "INTERNATIONAL") {
         const cost = minutes * plan.internationalRate;
         const roundedCost = cost.toFixed(2);
+
         costs[i] = roundedCost;
       } else if (type == "PREMIUM") {
         const cost = minutes * plan.premiumRate;
         const roundedCost = cost.toFixed(2);
+
         costs[i] = roundedCost;
       } else {
         console.log("Cannot determine call type");
@@ -244,7 +247,9 @@ const BpCalls = () => {
               ))}
             </table>
           </Row>
-          <h1 class="float-right">Total Cost: €{totProps.total}</h1>
+          <h1 class="float-right">
+            Total Cost of calls made: €{totProps.total}
+          </h1>
         </div>
       </Col>
     </Container>
