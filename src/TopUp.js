@@ -4,16 +4,24 @@ import { listPlans } from "./graphql/queries";
 import awsExports from "./aws-exports";
 import Auth from "@aws-amplify/auth";
 import Container from "react-bootstrap/Container";
+
+import PpNav from "./PpNav";
+import { Col, Form } from "react-bootstrap";
+
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import PpNav from "./BpNav";
-import { Col, Form } from "react-bootstrap";
 
 import CheckoutForm from "./CheckoutForm";
 Amplify.configure(awsExports);
 
-const promise = loadStripe(
+const stripePromise = loadStripe(
   "pk_test_51IbMlrGRleJE8Th4SKn0HD8NCsGgf9sSuXFytfKvyOwTmsZDbiFdI4qKy5qIZ2seGND9ViIRz40DKF2jRe7s8zR600wDxb6CdM"
+);
+
+const Message = ({ message }) => (
+  <section>
+    <p>{message}</p>
+  </section>
 );
 
 const initialState = {
@@ -87,6 +95,27 @@ const Topup = () => {
       console.log("Error adding user to plan", error);
     }
   }
+
+  const handleClick = async (event) => {
+    const stripe = await stripePromise;
+
+    const response = await fetch("/create-checkout-session", {
+      method: "POST",
+    });
+
+    const session = await response.json();
+
+    // When the customer clicks on the button, redirect them to Checkout.
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (result.error) {
+      // If `redirectToCheckout` fails due to a browser or network
+      // error, display the localized error message to your customer
+      // using `result.error.message`.
+    }
+  };
   return (
     <Container fluid>
       <PpNav />
@@ -149,9 +178,12 @@ const Topup = () => {
           <h1></h1>
           <div class="card-body">
             <div>
-              <Elements stripe={promise}>
-                <CheckoutForm />
-              </Elements>
+              <button
+                onClick={handleClick}
+                class="btn btn-primary btn-lg active float-right"
+              >
+                Pay
+              </button>
             </div>
           </div>
         </div>

@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Amplify, { API, graphqlOperation } from "aws-amplify";
-import { updatePlan } from "./graphql/mutations";
-import { listPlans } from "./graphql/queries";
-import { listCalls } from "./graphql/queries";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import Amplify, { API, graphqlOperation } from "aws-amplify";
+import { listCalls } from "./graphql/queries";
+import BpNav from "./BpNav";
+import { listPlans } from "./graphql/queries";
 import Form from "react-bootstrap/Form";
 import Auth from "@aws-amplify/auth";
-import BpNav from "./BpNav";
 
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
@@ -69,8 +68,9 @@ const Bills = () => {
     }
   }
 
-  async function fetchCalls() {
+  async function fetchCalls(e) {
     try {
+      e.preventDefault();
       const planDate = formState.Year.concat("-", formState.Month);
       let callFilter = {
         StartTime: {
@@ -82,9 +82,7 @@ const Bills = () => {
       );
 
       const calls = callData.data.listCalls.items;
-      if (calls) {
-        setCalls(calls);
-      }
+      setCalls(calls);
       console.log(calls);
     } catch (error) {
       console.log("Error fetching Calls", error);

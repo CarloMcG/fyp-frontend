@@ -5,7 +5,7 @@ import awsExports from "./aws-exports";
 import Auth from "@aws-amplify/auth";
 import Container from "react-bootstrap/Container";
 import { Circle } from "rc-progress";
-import PpNav from "./BpNav";
+import PpNav from "./PpNav";
 
 import { listCalls } from "./graphql/queries";
 Amplify.configure(awsExports);
@@ -57,7 +57,20 @@ const PpDashboard = () => {
 
   async function fetchCalls() {
     try {
-      const callData = await API.graphql(graphqlOperation(listCalls));
+      var d = new Date();
+      var m = ("0" + (d.getMonth() + 1)).slice(-2);
+      var y = d.getFullYear() + "-";
+
+      const planDate = y.concat(m);
+      console.log(planDate);
+      let callFilter = {
+        StartTime: {
+          contains: planDate,
+        },
+      };
+      const callData = await API.graphql(
+        graphqlOperation(listCalls, { filter: callFilter })
+      );
       const calls = callData.data.listCalls.items;
       setCalls(calls);
     } catch (error) {
