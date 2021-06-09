@@ -72,7 +72,7 @@ const Topup = () => {
       const mobTot = order.Mobile * planDetails.mobileRate;
       const landTot = order.Landline * planDetails.landlineRate;
       const intTot = order.Int * planDetails.internationalRate;
-      const premTot = order.Prem * planDetails.premiumMinutes;
+      const premTot = order.Prem * planDetails.premiumRate;
       total[0] = mobTot + landTot + intTot + premTot;
 
       console.log(setTotal);
