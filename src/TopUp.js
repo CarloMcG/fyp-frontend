@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
 import { listPlans } from "./graphql/queries";
+import { updatePlan } from "./graphql/mutations";
 import awsExports from "./aws-exports";
 import Auth from "@aws-amplify/auth";
 import Container from "react-bootstrap/Container";
-import Paypal from "./Paypal";
+import PrePaypal from "./PrePaypal";
 import PpNav from "./PpNav";
 import { Col, Form } from "react-bootstrap";
 Amplify.configure(awsExports);
@@ -28,6 +29,14 @@ const planProps = {
   premiumRate: "",
   costPerMonth: "",
   Users: "",
+};
+
+const updatedPlan = {
+  id: "",
+  mobileMinutes: "",
+  landlineMinutes: "",
+  internationalMinutes: "",
+  premiumMinutes: "",
 };
 
 const Topup = () => {
@@ -74,12 +83,30 @@ const Topup = () => {
       const intTot = order.Int * planDetails.internationalRate;
       const premTot = order.Prem * planDetails.premiumRate;
       total[0] = mobTot + landTot + intTot + premTot;
-
       console.log(setTotal);
     } catch (error) {
       console.log("Error adding user to plan", error);
     }
   }
+
+  async function updatePlan() {
+    try {
+      updatedPlan.id = planDetails.id;
+      updatedPlan.mobileMinutes = planProps.mobileMinutes + formState.Mobile;
+      updatedPlan.landlineMinutes =
+        planProps.landlineMinutes + formState.Landline;
+      updatedPlan.internationalMinutes =
+        planProps.internationalMinutes + formState.Int;
+      updatedPlan.premiumMinutes = planProps.premiumMinutes + formState.Prem;
+
+      console.log(updatedPlan);
+      await API.graphql(graphqlOperation(updatePlan, { input: updatedPlan }));
+      console.log("Plan updated successfully");
+    } catch (error) {
+      console.log("Error updating plan", error);
+    }
+  }
+
   return (
     <Container fluid>
       <PpNav />
@@ -143,11 +170,12 @@ const Topup = () => {
           <div class="card-body">
             <div>
               {checkout ? (
-                <Paypal />
+                <PrePaypal />
               ) : (
                 <button
                   onClick={() => {
                     setCheckout(true);
+                    updatePlan();
                   }}
                   class="btn btn-primary btn-lg active"
                 >

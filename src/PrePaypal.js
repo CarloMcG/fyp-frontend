@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export default function Paypal() {
+export default function PrePaypal() {
   const paypal = useRef();
 
   useEffect(() => {
@@ -11,10 +11,10 @@ export default function Paypal() {
             intent: "CAPTURE",
             purchase_units: [
               {
-                description: "Billpay",
+                description: "Prepay",
                 amount: {
                   currency_code: "EUR",
-                  value: 30.0,
+                  value: 22.55,
                 },
               },
             ],
