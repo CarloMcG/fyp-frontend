@@ -41,7 +41,7 @@ const ref = React.createRef();
 const options = {
   orientation: "landscape",
   unit: "in",
-  format: [11.7, 20],
+  format: [28, 28],
 };
 
 const PpCalls = () => {
