@@ -10,7 +10,7 @@ This application is hosted on AWS using the following components of the AWS Ecos
 
 The frontend was developed using React, and implements Bootstrap.
 
-Stripe was also incorporated as a payment module to allow customers to pay for calls.
+Paypal was also incorporated as a payment module to allow customers to pay for calls.
 
 ### Check it out
 This application can be accessed [here](http://www.callratingsys.com)
