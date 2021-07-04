@@ -218,6 +218,15 @@ body{
     animation: loading 2s infinite ease;
 }
 
+.auth-container {
+    width: auto;
+    height: auto;
+    min-height: 100vh;
+  
+    justify-content: right;
+    align-items: right;
+}
+
 @keyframes loading {
     0% {
         -webkit-transform: rotate(0deg);

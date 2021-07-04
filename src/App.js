@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import "./theme.scss";
 
+import About from "./About";
 import Login from "./Login";
 import BpDashboard from "./BillPayDashboard";
 import AdminDashboard from "./AdminDashboard";
@@ -25,7 +26,8 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <Route exact path="/" component={Login} />
+      <Route exact path="/" component={About} />
+      <Route exact path="/Login" component={Login} />
       <Route exact path="/BillPayDashboard" component={BpDashboard} />
       <Route exact path="/AdminDashboard" component={AdminDashboard} />
       <Route exact path="/PpCalls" component={PpCalls} />
