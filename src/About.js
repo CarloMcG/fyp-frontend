@@ -72,6 +72,15 @@ function About() {
                     Feel free to take a look around, using the credentials
                     provided on the login page.
                   </p>
+                  <p
+                    class="card-text"
+                    style={{
+                      fontStyle: "italic",
+                    }}
+                  >
+                    Please note that this application was not designed to run on
+                    mobile devices, so performance may vary.
+                  </p>
                   <a class="btn btn-primary btn-lg active" href="/Login">
                     Login
                   </a>
